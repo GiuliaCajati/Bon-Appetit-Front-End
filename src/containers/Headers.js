@@ -80,7 +80,7 @@ export default function ScrollableTabsButtonForce() {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          
+        
           <Tab icon={<PersonPinIcon />} {...a11yProps(0)} />
           <Tab icon={<HelpIcon />} {...a11yProps(1)} />
           <Tab icon={<ShoppingBasket />} {...a11yProps(2)} />
@@ -88,7 +88,6 @@ export default function ScrollableTabsButtonForce() {
           <Tab icon={<HomeIcon />} {...a11yProps(4)} />
         </Tabs>
       </AppBar>
-
 
       <TabPanel value={value} index={0}>
       </TabPanel>
@@ -100,7 +99,6 @@ export default function ScrollableTabsButtonForce() {
       </TabPanel>
       <TabPanel value={value} index={4}>
       </TabPanel>
-   
       
     </div>
   );

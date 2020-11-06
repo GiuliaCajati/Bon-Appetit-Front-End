@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+
 import Filter from "../components/Filter.js"
 import Recepie from "../components/Recepie.js"
-import UseStyles from "./RecepieGrid.js"
+import RecepieGrid from "./RecepieGrid.js"
 
 const mealURL="http://localhost:3000/meals"
 class Body extends Component {
     constructor(){
         super()
         this.state = {
-            mealArray: []
-            // mealCardFront: true
+            mealArray: [],
+            mealCardFront: true
         }
         
     }
@@ -23,20 +24,20 @@ class Body extends Component {
     }
 
     toggleMeal = () => {
-        
-        // this.setState({
-        //   mealCardFront: !this.state.mealCardFront
-        // })
+        this.setState({
+          mealCardFront: !this.state.mealCardFront
+        })
       }
 
     render() {
 
         return (
             <div>
-               <Filter />
-            <UseStyles mealArray={this.state.mealArray} 
-            toggleMeal={this.toggleMeal}/>
-            
+                <Filter />
+                <RecepieGrid 
+                mealArray={this.state.mealArray} 
+                toggleMeal={this.toggleMeal}
+                mealCardFront={this.state.mealCardFront}/>
             </div>
         );
     }
