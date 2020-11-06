@@ -30,7 +30,7 @@ class Body extends Component {
       }
 
     render() {
-        console.log(this.state.mealCardFront)
+
         return (
             <div>
                <Filter />

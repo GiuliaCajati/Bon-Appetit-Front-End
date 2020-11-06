@@ -51,9 +51,6 @@ export default function TitlebarGridList(props) {
                 onClick={props.toggleMeal}>
                   <InfoIcon />
                 </IconButton>}/>
-
-
-
           </GridListTile>
         ))}
       </GridList>
