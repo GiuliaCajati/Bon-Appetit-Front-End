@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Filter from "../components/filter.js"
-import Recepie from "../components/recepie.js"
+import Filter from "../components/Filter.js"
+import Recepie from "../components/Recepie.js"
+import UseStyles from "./RecepieGrid.js"
 
 const mealURL="http://localhost:3000/meals"
 class Body extends Component {
@@ -23,7 +24,8 @@ class Body extends Component {
         return (
             <div>
                <Filter />
-               {this.state.mealArray.map(meal =><Recepie meal={meal} key={meal.id}/>)}
+            <UseStyles mealArray={this.state.mealArray} />
+            
             </div>
         );
     }

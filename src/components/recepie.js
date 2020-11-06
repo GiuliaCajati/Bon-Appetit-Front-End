@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class recepie extends Component {
+class Recepie extends Component {
     state = {
         mealCardFront: true
       }
@@ -35,4 +35,4 @@ class recepie extends Component {
     }
 }
 
-export default recepie;
+export default Recepie;

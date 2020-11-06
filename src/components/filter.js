@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class filter extends Component {
+class Filter extends Component {
     render() {
         return (
             <div>
@@ -14,4 +14,4 @@ class filter extends Component {
     }
 }
 
-export default filter;
+export default Filter;
