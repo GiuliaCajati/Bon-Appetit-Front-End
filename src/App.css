@@ -1,5 +1,18 @@
 
 
+/* makes grey box big */
+/* .MuiGridListTileBar-rootSubtitle{
+  height: 300px !important;
+} */
+/* text in grey box */
+/* .MuiGridListTileBar-title{
+  white-space: normal !important;
+} */
+
+/* overriding for menu bat, location */
+.MuiTabs-flexContainer{
+  margin-left:20% !important;
+}
 
 .App {
   text-align: center;

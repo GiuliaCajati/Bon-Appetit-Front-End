@@ -25,28 +25,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//can we still use toggle?? 
 
 export default function TitlebarGridList(props) {
   const classes = useStyles();
+  
 
   return (
     <div className={classes.root}>
       <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">Recepies</ListSubheader>
+          <ListSubheader component="div"> Feast Your Eyes </ListSubheader>
         </GridListTile>
         {props.mealArray.map((meal) => (
+          
           <GridListTile key={meal.id}>
             <img src={meal.photo_url} alt={meal.name} />
             <GridListTileBar
-              title={meal.name}
+              title={meal.instructions}
+              other={meal.name}
               subtitle={<span>by: {meal.origin}</span>}
               actionIcon={
-                <IconButton aria-label={`info about ${meal.name}`} className={classes.icon}>
+                <IconButton aria-label={`info about ${meal.name}`} 
+                className={classes.icon} 
+                onClick={props.toggleMeal}>
                   <InfoIcon />
-                </IconButton>
-              }
-            />
+                </IconButton>}/>
+
+
+
           </GridListTile>
         ))}
       </GridList>

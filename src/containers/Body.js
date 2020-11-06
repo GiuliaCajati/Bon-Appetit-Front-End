@@ -9,7 +9,9 @@ class Body extends Component {
         super()
         this.state = {
             mealArray: []
+            // mealCardFront: true
         }
+        
     }
 
     componentDidMount() {
@@ -20,11 +22,20 @@ class Body extends Component {
         }))
     }
 
+    toggleMeal = () => {
+        
+        // this.setState({
+        //   mealCardFront: !this.state.mealCardFront
+        // })
+      }
+
     render() {
+        console.log(this.state.mealCardFront)
         return (
             <div>
                <Filter />
-            <UseStyles mealArray={this.state.mealArray} />
+            <UseStyles mealArray={this.state.mealArray} 
+            toggleMeal={this.toggleMeal}/>
             
             </div>
         );

@@ -5,9 +5,12 @@ class Filter extends Component {
     render() {
         return (
             <div>
-                <label>Search</label>
+                <label>Search </label>
                 <input/>
+                {/* <div>
                 <label>Sort By</label>
+                </div> */}
+                
     
             </div>
         );
