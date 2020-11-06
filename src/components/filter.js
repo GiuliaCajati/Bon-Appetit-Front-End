@@ -6,7 +6,7 @@ class Filter extends Component {
         return (
             <div>
                 <label>Search </label>
-                <input/>
+                <input onChange={(event) => this.props.filterMealArray(event.target.value)}/>
                 {/* <div>
                 <label>Sort By</label>
                 </div> */}

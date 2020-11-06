@@ -1,7 +1,4 @@
 
-
-
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -44,8 +41,7 @@ export default function TitlebarGridList(props) {
           <ListSubheader component="div"> Feast Your Eyes </ListSubheader>
         </GridListTile>
         {props.mealCardFront?props.mealArray.map((meal) => (
-          
-          
+          //show meal title 
             <GridListTile key={meal.id}>
               
               <img src={meal.photo_url} alt={meal.name} /> 
@@ -62,8 +58,7 @@ export default function TitlebarGridList(props) {
               
             </GridListTile>
         )):props.mealArray.map((meal) => (
-          
-          
+          //show meal instructions 
           <GridListTile key={meal.id}>
             
             <img src={meal.photo_url} alt={meal.name} /> 
@@ -77,7 +72,6 @@ export default function TitlebarGridList(props) {
 
                   <InfoIcon />
                 </IconButton>}/>
-            
           </GridListTile>
       ))}
       </GridList>

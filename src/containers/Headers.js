@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -6,13 +8,13 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import HomeIcon from '@material-ui/icons/Home';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
-import HelpIcon from '@material-ui/icons/Help';
-import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import ThumbDown from '@material-ui/icons/ThumbDown';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import PersonPinIcon from '@material-ui/icons/PersonPin';
+import HelpIcon from '@material-ui/icons/Help';
+import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -81,11 +83,10 @@ export default function ScrollableTabsButtonForce() {
           aria-label="scrollable force tabs example"
         >
         
-          <Tab icon={<PersonPinIcon />} {...a11yProps(0)} />
-          <Tab icon={<HelpIcon />} {...a11yProps(1)} />
-          <Tab icon={<ShoppingBasket />} {...a11yProps(2)} />
-          <Tab icon={<ThumbUp />} {...a11yProps(3)} />
-          <Tab icon={<HomeIcon />} {...a11yProps(4)} />
+          <Tab icon={<HomeIcon />} {...a11yProps(0)} />
+          <Tab icon={<PersonPinIcon />} {...a11yProps(1)} />
+          <Tab icon={<HelpIcon />} {...a11yProps(2)} />
+        
         </Tabs>
       </AppBar>
 
@@ -94,10 +95,6 @@ export default function ScrollableTabsButtonForce() {
       <TabPanel value={value} index={1}>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-      </TabPanel>
-      <TabPanel value={value} index={4}>
       </TabPanel>
       
     </div>
