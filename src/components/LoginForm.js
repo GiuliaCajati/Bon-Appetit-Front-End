@@ -95,10 +95,19 @@ export default function SignInSide() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+            {/* conditionally render button if sign-up is selected */}
+             <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="photo url"
+              label="Photo URL"
+              type="photo url"
+              id="photo url"
+              autoComplete="current-password"
             />
+           
             <Button
               type="submit"
               fullWidth
@@ -108,11 +117,10 @@ export default function SignInSide() {
             >
               Sign In
             </Button>
+           
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+          
               </Grid>
               <Grid item>
                 <Link href="#" variant="body2">
