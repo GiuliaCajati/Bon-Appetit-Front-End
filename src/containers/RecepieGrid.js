@@ -6,7 +6,6 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import Recepie from "../components/recepie.js"
 import ThumbUp from '@material-ui/icons/ThumbUp';
 
 const useStyles = makeStyles((theme) => ({
@@ -34,7 +33,7 @@ export default function TitlebarGridList(props) {
     <div className={classes.root}>
       <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">December</ListSubheader>
+          <ListSubheader component="div">Feast Your Eyes</ListSubheader>
         </GridListTile>
         {props.mealArray.map((meal) => (
           <GridListTile key={meal.id}>

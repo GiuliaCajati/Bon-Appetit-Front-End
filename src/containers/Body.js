@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import Filter from "../components/Filter.js"
-import Recepie from "../components/recepie.js"
 import RecepieGrid from "./RecepieGrid.js"
 
 const mealURL="http://localhost:3000/meals/"
@@ -25,9 +23,10 @@ class Body extends Component {
     }
 
     addLike = (mealId) => {
-        console.log(mealId)
        let likedMeal = this.state.mealArray.find(meal => meal.id === mealId)
        let updatedLikes = likedMeal.likes + 1;
+
+       console.log(mealURL + mealId)
        fetch(mealURL + mealId, {
         method: "PATCH",
         headers:  { 
@@ -35,20 +34,25 @@ class Body extends Component {
                 'Accept': 'application/json'
             },
         body: JSON.stringify({
-            meal_likes: updatedLikes,
-            meal_id: mealId
+            likes: updatedLikes
         })
     })
     .then(res => res.json())
-    .then(updatedMeal => console.log(updatedMeal))
-  
-    
-    // .then(updatedMeal => {
-    //     this.setState({
-    //         filteredMealArray: [...this.state.filteredMealArray, updatedMeal],
-    //         mealArray:[...this.state.mealArray, updatedMeal]
-    // })
-    //})
+    .then(updatedMeal => 
+        {let newArray = this.state.mealArray.map(meal => 
+            {
+                if(meal.id !== updatedMeal.id)
+                {
+                    return meal
+                }else{
+                    return updatedMeal
+                }})
+        //let updatedArray = [...this.state.filteredMealArray, likedMeal]
+        this.setState({
+            filteredMealArray: [...newArray],
+            mealArray:[...newArray]
+    })
+    })
 
     }
       
@@ -64,8 +68,10 @@ class Body extends Component {
 
         return (
             <div>
+                <div className="meals-search-bar">
                 <Filter filterMealArray={this.filterMealArray}/>
-                
+                </div>
+
                 <RecepieGrid 
                 mealArray={this.state.filteredMealArray} 
                 addLike={this.addLike}

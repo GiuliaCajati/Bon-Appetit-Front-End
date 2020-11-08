@@ -10,9 +10,8 @@
 } */
 
 
-/* overriding for menu bat, location */
-.MuiTabs-flexContainer{
-  margin-left:30% !important;
+.meals-search-bar{
+  margin-top:5%;
 }
 
 .App {
