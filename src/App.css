@@ -5,20 +5,10 @@
   height: 300px !important;
 } */
 /* text in grey box */
-.MuiGridListTileBar-title{
-  white-space: normal !important;
-}
-
-
-
-/* makes grey box big */
-#show-instructions{
-  height: 300px !important;
-}
-/* text in grey box */
-/* #test{
+/* .MuiGridListTileBar-title{
   white-space: normal !important;
 } */
+
 
 /* overriding for menu bat, location */
 .MuiTabs-flexContainer{

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -7,7 +6,8 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import Recepie from "../components/Recepie.js"
+import Recepie from "../components/recepie.js"
+import ThumbUp from '@material-ui/icons/ThumbUp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,64 +21,38 @@ const useStyles = makeStyles((theme) => ({
     width: 1000,
     height: 1000,
   },
-  icon: {
-    color: 'rgba(255, 255, 255, 0.54)',
+  margin: {
+    margin: theme.spacing(3),
+    color: 'rgba(255, 255, 255, 0.54)'
   },
 }));
 
-//can we still use toggle?? 
-
 export default function TitlebarGridList(props) {
   const classes = useStyles();
-  
+
   return (
-    
- 
     <div className={classes.root}>
-      
       <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div"> Feast Your Eyes </ListSubheader>
+          <ListSubheader component="div">December</ListSubheader>
         </GridListTile>
-        {props.mealCardFront?props.mealArray.map((meal) => (
-          //show meal title 
-            <GridListTile key={meal.id}>
-              
-              <img src={meal.photo_url} alt={meal.name} /> 
-              <GridListTileBar
-                title={meal.name}
-                subtitle={<span>by: {meal.origin}</span>}
-                actionIcon={
-                  <IconButton aria-label={`info about ${meal.name}`} 
-                  className={classes.icon} 
-                  onClick={props.toggleMeal}>
-
-                    <InfoIcon />
-                  </IconButton>}/>
-              
-            </GridListTile>
-        )):props.mealArray.map((meal) => (
-          //show meal instructions 
+        {props.mealArray.map((meal) => (
           <GridListTile key={meal.id}>
-            
-            <img src={meal.photo_url} alt={meal.name} /> 
-            <GridListTileBar id="show-instructions"
-              title={meal.instructions}//name to instructions
-              subtitle={<span>Origin: {meal.origin}</span>}
+            <img src={meal.photo_url} alt={meal.name} />
+            <GridListTileBar
+              title={meal.name}
+              subtitle={<span>likes: {meal.likes}</span>}
               actionIcon={
-                <IconButton aria-label={`info about ${meal.name}`} 
-                className={classes.icon} 
-                onClick={props.toggleMeal}>
-
+                <ThumbUp 
+                  className={classes.margin}
+                  onClick={() => props.addLike(meal.id)}>
                   <InfoIcon />
-                </IconButton>}/>
+                </ThumbUp>
+              }
+            />
           </GridListTile>
-      ))}
+        ))}
       </GridList>
     </div>
-
-
   );
 }
-
- 
