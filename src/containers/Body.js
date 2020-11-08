@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Filter from "../components/Filter.js"
-import Recepie from "../components/recepie.js"
+import Recepie from "../components/Recepie.js"
 import RecepieGrid from "./RecepieGrid.js"
 
 const mealURL="http://localhost:3000/meals/"
