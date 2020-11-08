@@ -61,9 +61,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignInSide() {
+export default function SignInSide(props) {
   const classes = useStyles();
-
+console.log(props.user)
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -71,10 +71,10 @@ export default function SignInSide() {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar} >
-          <Icon icon={chefHat} width="99%"/>
+          <Icon icon={chefHat} width="90%"/>
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign Up
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -82,11 +82,13 @@ export default function SignInSide() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="name"
+              label="User Name"
+              name="name"
+              autoComplete="name"
               autoFocus
+              value={props.user}
+              onChange={(event) => props.handleOnChange(event)}
             />
             <TextField
               variant="outlined"
@@ -98,6 +100,8 @@ export default function SignInSide() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={props.user}
+              onChange={(event) => props.handleOnChange(event)}
             />
             {/* conditionally render button if sign-up is selected */}
              <TextField
@@ -110,8 +114,10 @@ export default function SignInSide() {
               type="photo url"
               id="photo url"
               autoComplete="current-password"
+              value={props.user}
+              onChange={(event) => props.handleOnChange(event)}
             />
-           
+           {/* conditionally render button if sign-up  is selected */}
             <Button
               type="submit"
               fullWidth
@@ -119,7 +125,7 @@ export default function SignInSide() {
               color="primary"
               className={classes.submit}
             >
-              Sign In
+              Sign Up 
             </Button>
            
             <Grid container>
@@ -132,9 +138,7 @@ export default function SignInSide() {
                 </Link>
               </Grid>
             </Grid>
-            <Box mt={5}>
-              <Copyright />
-            </Box>
+           
           </form>
         </div>
       </Grid>

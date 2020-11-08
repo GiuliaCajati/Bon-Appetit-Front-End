@@ -6,9 +6,11 @@ const loginURL="http://localhost:3000/meals/login"
 class LoginContainer extends Component {
   
     constructor(){
+        super()
         this.state = {
-            username: "",
-            password: ""
+            name: "",
+            password: "",
+            photo_url:""
         }
     }
 
@@ -39,7 +41,7 @@ class LoginContainer extends Component {
     render() {
         return(
         <div>
-            <LoginForm user={this.state}/>
+            <LoginForm user={this.state.user} />
         </div>
         )
     }

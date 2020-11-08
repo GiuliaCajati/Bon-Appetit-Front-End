@@ -33,7 +33,8 @@ class App extends Component {
       </div>
       <div className="App">
         <Switch>
-        <Route exact path='/login' component={LoginForm}/>
+        <Route exact path='/login' component={LoginForm} />
+        <Route exact path='/create_account' component={LoginForm}/>
         <Route exact path='/meals' component={Body}/>
         <Route component={NotFound}/>
         </Switch>
