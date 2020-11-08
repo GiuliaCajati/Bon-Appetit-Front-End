@@ -27,14 +27,14 @@ class App extends Component {
       <Fragment>
       <div className="App">
         <Switch>
-        <Route exact path='/' component={Header}/>
+        <Route exact path='/meals' component={Header}/>
         <Route exact path='/login' component={null}/>
         </Switch>
       </div>
       <div className="App">
         <Switch>
         <Route exact path='/login' component={LoginForm}/>
-        <Route exact path='/' component={Body}/>
+        <Route exact path='/meals' component={Body}/>
         <Route component={NotFound}/>
         </Switch>
       </div>
