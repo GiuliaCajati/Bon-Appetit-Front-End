@@ -9,7 +9,7 @@ class Profile extends Component {
                 {console.log(this.props.currentUser.meals)}
             <h2>Welcome {this.props.currentUser}</h2> 
             <div>{this.props.CurrentUserData.meals.map(meal => meal.name)}</div>
-        
+    
             </div>
             
         );

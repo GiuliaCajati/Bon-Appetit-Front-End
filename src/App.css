@@ -8,7 +8,9 @@
 /* .MuiGridListTileBar-title{
   white-space: normal !important;
 } */
-
+img{
+  width: 40%
+}
 #header-logo{
   margin-left: 20px
 }

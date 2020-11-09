@@ -12,7 +12,7 @@ import { Icon, InlineIcon } from '@iconify/react';
 import chefHat from '@iconify-icons/mdi/chef-hat';
 import { Redirect } from 'react-router-dom'
 import {Route } from 'react-router-dom'
-import Body from '../containers/Body.js'
+
 
 //Material UI: Copyright text 
 function Copyright() {

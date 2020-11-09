@@ -20,10 +20,13 @@ const useStyles = makeStyles({
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
+     
       <Tabs
         centered
       >
-        <h2 id="header-logo">Bon Appétit</h2>
+        
+      <h2 id="header-logo">Bon Appétit</h2>
+      
        <Link to="/meals"><Tab icon={<RestaurantMenu/>}/></Link>
        <Link to="/profile"><Tab icon={<PersonPinIcon />}/></Link>
        <Link to="/login"><Tab icon={<ExitToApp />}/></Link>
