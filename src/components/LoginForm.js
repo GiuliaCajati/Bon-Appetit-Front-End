@@ -102,8 +102,11 @@ export default function SignInSide(props) {
     .then(response => response .json())
     .then(data => {
           props.setCurrentUser(data)
-          props.routerProps.history.push('/profile')
+          data.message?
+          props.routerProps.history.push('/login'):
+          props.routerProps.history.push('/profile') 
         }) 
+        
   }
   //push(path, [state]) - (function) Pushes a new entry onto the history stack
 

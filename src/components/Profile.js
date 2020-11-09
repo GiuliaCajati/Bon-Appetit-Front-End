@@ -7,7 +7,8 @@ class Profile extends Component {
         return (
             <div>
                 {console.log(this.props.currentUser.meals)}
-            <h2>Welcome {this.props.currentUser}!!</h2> 
+            <h2>Welcome {this.props.currentUser}</h2> 
+            <div>{this.props.CurrentUserData.meals.map(meal => meal.name)}</div>
         
             </div>
             

@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     flexGrow: 10,
   },
   });
-
+  
   const Headers = ({updateInput}) =>{
   const classes = useStyles();
   return (

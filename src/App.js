@@ -15,18 +15,18 @@ class App extends Component {
     super()
       this.state = {
         CurrentUser: null,
-        CurrentAvatar: null
+        CurrentUserData: null
       }
   }
 
   //login or create new user form should call on this to set state (but props are not getting passed down??)
   setCurrentUser = (data) => {
-    this.setState({
-      CurrentUser: data.name,
-      CurrentAvatar: data.photo_url
+      this.setState({
+        CurrentUser: data.name,
+        CurrentUserData: data
     })
-
   }
+  
 
   render(){
     return (
@@ -35,19 +35,24 @@ class App extends Component {
         <Switch>
          {/* Header */}
         <Route exact path='/meals' component={Header}/>
-        <Route exact path='/profile' component={Header}/>
+        <Route exact path='/profile' render={() =>{
+          if(this.state.CurrentUser){return<Header/>}}}/>
+          
         <Route exact path='/login' component={null}/>
         </Switch>
       </div>
+
       <div className="App">
         <Switch>
           {/* Body */}
-        <Route exact path='/profile' render={() => {
-              return this.state.CurrentUser ? (
+        <Route exact path='/profile' 
+               render={(props) => {
+              return this.state.CurrentUser?(
                 <Profile currentUser={this.state.CurrentUser} 
-                      currentAvatar={this.state.CurrentAvatar}/>
+                CurrentUserData={this.state.CurrentUserData}/>
               ) : ( 
-                <LoginForm setCurrentUser={this.setCurrentUser}/>  
+                <LoginForm setCurrentUser={this.setCurrentUser}
+                routerProps={props}/>  
               )
               }} />
 
