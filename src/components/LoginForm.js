@@ -10,6 +10,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Icon, InlineIcon } from '@iconify/react';
 import chefHat from '@iconify-icons/mdi/chef-hat';
+import { Redirect } from 'react-router-dom'
+import {Route } from 'react-router-dom'
+import Body from '../containers/Body.js'
 
 //Material UI: Copyright text 
 function Copyright() {
@@ -88,7 +91,6 @@ export default function SignInSide(props) {
       name: state.name,
       password: state.password
     }
-
     fetch(usersURL, {
         method: "POST",
         headers: {
@@ -99,10 +101,11 @@ export default function SignInSide(props) {
     })
     .then(response => response .json())
     .then(data => {
-      this.props.setCurrentUser(data)
-      this.props.routerProps.history.push('/profile')
-    })
+          props.setCurrentUser(data)
+          props.routerProps.history.push('/profile')
+        }) 
   }
+  //push(path, [state]) - (function) Pushes a new entry onto the history stack
 
   return (
     <Grid container component="main" className={classes.root}>

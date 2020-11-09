@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Icon, InlineIcon } from '@iconify/react';
 import chefHat from '@iconify-icons/mdi/chef-hat';
+import { Redirect } from 'react-router-dom'
 
 //Material UI: Copyright text 
 function Copyright() {
@@ -101,8 +102,8 @@ export default function SignInSide(props) {
     })
     .then(response => response .json())
     .then(data => {
-      this.props.setCurrentUser(data)
-      this.props.routerProps.history.push('/profile')
+      props.setCurrentUser(data)
+      props.routerProps.history.push('/profile')
     })
   }
 

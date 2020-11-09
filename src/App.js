@@ -7,13 +7,15 @@ import LoginForm from './components/LoginForm.js'
 import NewUserForm from './components/NewUserForm.js'
 import {Route, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
-import MealShowPage from "./components/MealShowPage";
-import Profile from "./components/Profile";
+import MealShowPage from "./components/MealShowPage"
+import Profile from "./components/Profile"
+import PropTypes from "prop-types"
+import { withRouter } from "react-router"
 
 class App extends Component {
   constructor() {
     super()
-      this.setState = {
+      this.state = {
         CurrentUser: null,
         CurrentAvatar: null
       }
@@ -22,9 +24,10 @@ class App extends Component {
   //login or create new user form should call on this to set state (but props are not getting passed down??)
   setCurrentUser = (data) => {
     this.setState({
-      CurrentUser: data.user,
+      CurrentUser: data.name,
       CurrentAvatar: data.photo_url
     })
+
   }
 
   render(){
@@ -41,16 +44,26 @@ class App extends Component {
         <Switch>
           {/* Body */}
         <Route exact path='/profile' render={() => {
-        return this.state.CurrentUser ? (
-          <Profile currentUser={this.state.CurrentUser} currentAvatar={this.state.CurrentAvatar}/>
-        ) : ( 
-          <LoginForm setCurrentUser={this.setCurrentUser}/>
-        )
-        }} />
+              return this.state.CurrentUser ? (
+                <Profile currentUser={this.state.CurrentUser} 
+                        currentAvatar={this.state.CurrentAvatar}/>
+              ) : ( 
+                <LoginForm setCurrentUser={this.setCurrentUser}/>  
+              )
+              }} />
 
-        <Route exact path='/login' render={() => <LoginForm setCurrentUser={this.setCurrentUser}/>} />
-        <Route exact path='/create_account' component={NewUserForm}/>
+        <Route exact path='/create_account' 
+                    render={(props) => <NewUserForm 
+                    setCurrentUser={this.setCurrentUser} 
+                    routerProps={props}/>}/>
+
+        <Route exact path='/login' 
+                    render={(props) => <LoginForm 
+                    setCurrentUser={this.setCurrentUser} 
+                    routerProps={props}/>}/>
+
         <Route exact path='/meals' component={Body}/>
+
         <Route component={NotFound}/>
         </Switch>
       </div>
