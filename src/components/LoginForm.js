@@ -66,7 +66,7 @@ export default function SignInSide(props) {
   //Material UI: Form Style 
   const classes = useStyles();
 
-  const usersURL="http://localhost:3000/users"
+  const usersURL="http://localhost:3000/login"
 
   //Setting State for create new user 
   const [state , setState] = useState({
@@ -117,7 +117,7 @@ export default function SignInSide(props) {
           <Icon icon={chefHat} width="90%"/>
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign Up
+            Bon Apetit!
           </Typography>
           <form className={classes.form} noValidate>
             <TextField

@@ -9,6 +9,10 @@
   white-space: normal !important;
 } */
 
+#header-logo{
+  margin-left: 20px
+}
+
 /* 404 page  */
 body.four-o-four-page {
   content: "";

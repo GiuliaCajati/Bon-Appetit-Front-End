@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import logo from './logo.svg';
 import './App.css';
 import Header from './containers/Headers.js'
 import Body from './containers/Body.js'
@@ -7,7 +6,6 @@ import LoginForm from './components/LoginForm.js'
 import NewUserForm from './components/NewUserForm.js'
 import {Route, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
-import MealShowPage from "./components/MealShowPage"
 import Profile from "./components/Profile"
 import PropTypes from "prop-types"
 import { withRouter } from "react-router"
@@ -37,6 +35,7 @@ class App extends Component {
         <Switch>
          {/* Header */}
         <Route exact path='/meals' component={Header}/>
+        <Route exact path='/profile' component={Header}/>
         <Route exact path='/login' component={null}/>
         </Switch>
       </div>
@@ -46,7 +45,7 @@ class App extends Component {
         <Route exact path='/profile' render={() => {
               return this.state.CurrentUser ? (
                 <Profile currentUser={this.state.CurrentUser} 
-                        currentAvatar={this.state.CurrentAvatar}/>
+                      currentAvatar={this.state.CurrentAvatar}/>
               ) : ( 
                 <LoginForm setCurrentUser={this.setCurrentUser}/>  
               )
@@ -56,6 +55,7 @@ class App extends Component {
                     render={(props) => <NewUserForm 
                     setCurrentUser={this.setCurrentUser} 
                     routerProps={props}/>}/>
+                    
 
         <Route exact path='/login' 
                     render={(props) => <LoginForm 
@@ -72,4 +72,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
