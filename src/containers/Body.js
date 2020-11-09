@@ -26,7 +26,7 @@ class Body extends Component {
        let likedMeal = this.state.mealArray.find(meal => meal.id === mealId)
        let updatedLikes = likedMeal.likes + 1;
 
-       console.log(mealURL + mealId)
+       
        fetch(mealURL + mealId, {
         method: "PATCH",
         headers:  { 
@@ -36,22 +36,22 @@ class Body extends Component {
         body: JSON.stringify({
             likes: updatedLikes
         })
-    })
-    .then(res => res.json())
-    .then(updatedMeal => 
-        {let newArray = this.state.mealArray.map(meal => 
-            {
-                if(meal.id !== updatedMeal.id)
+        })
+        .then(res => res.json())
+        .then(updatedMeal => 
+            {let newArray = this.state.mealArray.map(meal => 
                 {
-                    return meal
-                }else{
-                    return updatedMeal
-                }})
-        //let updatedArray = [...this.state.filteredMealArray, likedMeal]
-        this.setState({
-            filteredMealArray: [...newArray],
-            mealArray:[...newArray]
-    })
+                    if(meal.id !== updatedMeal.id)
+                    {
+                        return meal
+                    }else{
+                        return updatedMeal
+                    }})
+            //let updatedArray = [...this.state.filteredMealArray, likedMeal]
+            this.setState({
+                filteredMealArray: [...newArray],
+                mealArray:[...newArray]
+        })
     })
 
     }
@@ -76,6 +76,8 @@ class Body extends Component {
                 mealArray={this.state.filteredMealArray} 
                 addLike={this.addLike}
                 mealCardFront={this.state.mealCardFront}/>
+
+                
             </div>
         );
     }

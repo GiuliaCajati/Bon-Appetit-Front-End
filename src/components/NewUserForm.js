@@ -68,7 +68,8 @@ export default function SignInSide(props) {
   //Setting State for create new user 
   const [state , setState] = useState({
     name: "",
-    password: ""
+    password: "",
+    photo_url: ""
   })
 
   //User text field (setting state)
@@ -86,7 +87,8 @@ export default function SignInSide(props) {
 
     let user = {
       name: state.name,
-      password: state.password
+      password: state.password,
+      photo_url: state.photo_url
     }
 
     fetch(usersURL, {
@@ -143,6 +145,21 @@ export default function SignInSide(props) {
               value={state.password}
               onChange={handleChange} 
             />
+            {/* conditionally render button if sign-up is selected??? */}
+             <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="photo_url"
+              label="Photo URL"
+              type="photo url"
+              id="photo_url"
+              autoComplete="current-password"
+              value={state.photo_url}
+              onChange={handleChange} 
+            />
+           {/* conditionally render button if sign-up  is selected??? */}
             <Button
               type="submit"
               fullWidth
@@ -152,19 +169,8 @@ export default function SignInSide(props) {
               className="btn btn-primary"
               onClick={handleSubmitClick}
             >
-              Login
+              Sign Up 
             </Button>
-           
-            <Grid container>
-              <Grid item xs>
-          
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
            
           </form>
         </div>

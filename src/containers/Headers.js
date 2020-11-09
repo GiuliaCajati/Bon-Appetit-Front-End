@@ -4,19 +4,17 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
-import HelpIcon from '@material-ui/icons/Help';
 import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles({
+  //material UI style 
   root: {
-    flexGrow: 1,
+    flexGrow: 10,
   },
-});
-
-const CenteredTabs = ({updateInput}) =>{
+  });
+  const CenteredTabs = ({updateInput}) =>{
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
