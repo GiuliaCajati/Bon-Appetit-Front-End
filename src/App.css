@@ -14,6 +14,35 @@
   margin-top: 10%;
 }
 
+.user-img{
+  width: 150px;
+  border-radius: 50%;
+}
+
+#header-logo{
+  margin-left: 100px;
+  margin-right: 40%;
+  font-family: Snell Roundhand, cursive;
+}
+
+#user-name{
+  font-family: Snell Roundhand, cursive;
+  position: absolute;
+  margin-top: -10%;
+  margin-left: 10%;
+}
+
+.user-img-container{
+  margin-right: 70%;
+  padding-bottom: 1%;
+  padding-top: 2%;
+}
+
+.user-top-meals{
+  position: absolute;
+  margin-top: -100px;
+}
+
 img{
   width: 40%
 }

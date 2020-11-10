@@ -34,7 +34,15 @@ export default function TitlebarGridList(props) {
   return (
     
     <div className={classes.root}>
+     <div class="user-img-container">
+      <img class="user-img" src={props.CurrentUserData.photo_url}/> 
+      </div>
+      <div>
+      <h1 id="user-name">{props.CurrentUserData.name} </h1>
+      <p id="user-top-meals">Top Meals: {props.CurrentUserData.meals.map(meal => <ol><li>{meal.name}</li></ol>)}</p>
       
+      </div>
+    
       <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto'}}>
         
@@ -46,7 +54,7 @@ export default function TitlebarGridList(props) {
             <img src={meal.photo_url} alt={meal.name}
             onClick={() => props.renderMealShowPage(meal.id)}/>
             
-            {/* <Link to={`/meals/${meal.id}`}></Link> */}
+           
           
             <GridListTileBar
               title={meal.name}
