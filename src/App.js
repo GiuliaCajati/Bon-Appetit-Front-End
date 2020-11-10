@@ -81,8 +81,27 @@ class App extends Component {
     this.setState ({
         filteredMealArray: [...newArray]
     })
-    }
+  }
 
+  sortMeals = (radioSelection) => {
+    let filteredMealArray = [...this.state.filteredMealArray]
+    let sortedMeals
+    switch(radioSelection){
+      case "names":
+        sortedMeals= filteredMealArray.sort((a,b) => a.name > b.name ? 1 : -1)
+      case "likes":
+        sortedMeals =filteredMealArray.sort((a,b) => a.likes > b.likes ? -1 : 1)
+      // case "author":
+        //user?
+        // return sortedMeals.sort((a,b) => a.user.name > b.name ? 1 : -1)
+      default:
+        sortedMeals=  filteredMealArray
+    
+    this.setState ({
+      filteredMealArray: [...sortedMeals]
+    })}
+    
+  }
   //login & create new user event 
   setCurrentUser = (data) => {
       this.setState({
@@ -99,6 +118,8 @@ class App extends Component {
   deleteMeal = () => {
     //Delete user meals... still need to make
   }
+
+  
 
   render(){
     return (
@@ -164,13 +185,15 @@ class App extends Component {
                 filterMealArray={this.filterMealArray}
                 mealArray={this.state.filteredMealArray} 
                 addLike={this.addLike}
-                renderMealShowPage={this.renderMealShowPage}/>}}/>  
+                renderMealShowPage={this.renderMealShowPage}
+                sortMeals={this.sortMeals}/>}}/>  
         <Route path='/meals' render={()=>{
                 return<RecepieGrid
                 filterMealArray={this.filterMealArray}
                 mealArray={this.state.filteredMealArray} 
                 addLike={this.addLike}
-                renderMealShowPage={this.renderMealShowPage}/>}}/>  
+                renderMealShowPage={this.renderMealShowPage}
+                sortMeals={this.sortMeals}/>}}/>  
           
 
         <Route component={NotFound}/>

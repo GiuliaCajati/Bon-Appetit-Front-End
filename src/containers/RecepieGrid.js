@@ -41,7 +41,10 @@ export default function TitlebarGridList(props) {
   const [value, setValue] = React.useState('names');
 
   const handleChange = (event) => {
+    debugger
     setValue(event.target.value);
+    props.sortMeals(event.target.value)
+    
   };
 
 

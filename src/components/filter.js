@@ -9,7 +9,7 @@ class Filter extends Component {
     render() {
         return (
             <div> 
-                <label>Search</label>
+                <label> Search </label>
                 <input onChange={(event) => this.props.filterMealArray(event.target.value)}/>
             </div>
         );
