@@ -166,7 +166,7 @@ export default function SignInSide(props) {
           
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="create_account" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
