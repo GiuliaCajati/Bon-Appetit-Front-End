@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -34,6 +34,19 @@ const useStyles = makeStyles((theme) => ({
 export default function TitlebarGridList(props) {
   const classes = useStyles();
 
+  const [state , setState] = useState({
+    dummyFoodarray: [...props.CurrentUserData.meals]
+
+  })
+
+  const updateState = (selectedMealId) =>{
+    let updatedArray = state.dummyFoodarray.filter(meal => meal.id !== selectedMealId)
+    setState({
+      dummyFoodarray: [...updatedArray]
+    })
+  }
+
+
   return (
     
     <div className={classes.root}>
@@ -42,7 +55,7 @@ export default function TitlebarGridList(props) {
       </div>
       <div>
       <h1 id="user-name">{props.CurrentUserData.name} </h1>
-      <p id="user-top-meals">Top Meals: {props.CurrentUserData.meals.map(meal =>  meal.name)}</p>
+      <p id="user-top-meals">Top Meals: {state.dummyFoodarray.map(meal =>  meal.name)}</p>
         <Button variant="contained" color="primary">
         👩‍🍳Add Meal
         </Button>
@@ -54,7 +67,7 @@ export default function TitlebarGridList(props) {
         
         </GridListTile>
         
-        {props.CurrentUserData.meals.map((meal) => (
+        {state.dummyFoodarray.map((meal) => (
             
           <GridListTile key={meal.id}>
             <img src={meal.photo_url} alt={meal.name}
@@ -68,7 +81,11 @@ export default function TitlebarGridList(props) {
               actionIcon={
                 <DeleteSweepIcon
                   className={classes.margin}
-                  onClick={() => props.deleteMeal(meal.id)}>
+                  onClick={() => {
+                    props.deleteMeal(meal.id)
+                    updateState(meal.id)
+                  }
+                  }>
                   <InfoIcon />
                 </DeleteSweepIcon>
               }
