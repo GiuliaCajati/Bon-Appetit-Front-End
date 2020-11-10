@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import { Link } from 'react-router-dom' 
+import Filter from '../components/Filter.js'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,10 +32,12 @@ export default function TitlebarGridList(props) {
   const classes = useStyles();
 
   return (
+
     <div className={classes.root}>
+      
       <GridList cellHeight={300} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">Feast Your Eyes</ListSubheader>
+        <GridListTile key="Subheader" cols={2} style={{ height: 'auto'}}>
+        <Filter filterMealArray={props.filterMealArray}/> 
         </GridListTile>
         {props.mealArray.map((meal) => (
           <GridListTile key={meal.id}>

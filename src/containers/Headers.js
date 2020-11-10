@@ -27,9 +27,12 @@ const useStyles = makeStyles({
         
       <h2 id="header-logo">Bon Appétit</h2>
       
+      
+
        <Link to="/meals"><Tab icon={<RestaurantMenu/>}/></Link>
        <Link to="/profile"><Tab icon={<PersonPinIcon />}/></Link>
        <Link to="/login"><Tab icon={<ExitToApp />}/></Link>
+       
       </Tabs>
     </Paper>
   );

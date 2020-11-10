@@ -98,13 +98,15 @@ class App extends Component {
           
   render(){
     return (
+      
       <Fragment>
       <div className="App">
         <Switch>
          {/* Header */}
+         <Route path='/meals/:id' component={Header}/>
          
          {/* Meals Page Header */}
-         <Route exact path='/' render={() => {return<Header/>}}/>
+        <Route exact path='/' render={() => {return<Header/>}}/>
         <Route exact path='/meals' render={() => {return<Header/>}}/>
         {/* Profile Page Header */}
         <Route exact path='/profile' render={() =>{
@@ -120,6 +122,7 @@ class App extends Component {
          
           {/* Meal Show Page*/}
         <Route path='/meals/:id' render={(props)=> {
+          //this.state.mealArray showing [] when going to path directly
           let pathId= props.match.params.id
           let currentMeal = this.state.mealArray.find(meal => meal.id == pathId)
           return<MealShowPage meal={currentMeal} />}
@@ -153,11 +156,13 @@ class App extends Component {
         {/* Meals Index Page*/}
         <Route path='/' render={()=>{
                 return<RecepieGrid
+                filterMealArray={this.filterMealArray}
                 mealArray={this.state.filteredMealArray} 
                 addLike={this.addLike}
                 renderMealShowPage={this.renderMealShowPage}/>}}/>  
         <Route path='/meals' render={()=>{
                 return<RecepieGrid
+                filterMealArray={this.filterMealArray}
                 mealArray={this.state.filteredMealArray} 
                 addLike={this.addLike}
                 renderMealShowPage={this.renderMealShowPage}/>}}/>  

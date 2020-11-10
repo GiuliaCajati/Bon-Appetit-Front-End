@@ -8,9 +8,16 @@
 /* .MuiGridListTileBar-title{
   white-space: normal !important;
 } */
+#meal-card-div{
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
 img{
   width: 40%
 }
+
 #header-logo{
   margin-left: 20px
 }
