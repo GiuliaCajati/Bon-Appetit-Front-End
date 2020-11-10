@@ -48,14 +48,14 @@ export default function TitlebarGridList(props) {
   return (
 
     <div className={classes.root}>
-      <div>
+      <div class="radio-grid">
       <FormControl component="fieldset">
-      <FormLabel component="legend">Gender</FormLabel>
-      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-      <FormControlLabel value="names" control={<Radio />} label="Names" />
-      <FormControlLabel value="likes" control={<Radio />} label="Likes" />
-      <FormControlLabel value="author" control={<Radio />} label="Author" />
-      </RadioGroup>
+        <FormLabel component="legend">Meal Filter</FormLabel>
+          <RadioGroup row aria-label="Meal Filter" name="meal filter" value={value} onChange={handleChange}>
+            <FormControlLabel value="names" control={<Radio />} label="Names" labelPlacement="end"/>
+            <FormControlLabel value="likes" control={<Radio />} label="Likes" labelPlacement="end"/>
+            <FormControlLabel value="author" control={<Radio />} label="Author" labelPlacement="end"/>
+          </RadioGroup>
       </FormControl>
       </div>
       

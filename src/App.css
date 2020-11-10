@@ -53,6 +53,11 @@ body.four-o-four-page {
   z-index: -1;  
 }
 
+.radio-grid{
+  position: relative;
+  margin-left: 12%;
+  padding-right: 150px;
+}
 /* Header */
 .meals-search-bar{
   margin-top:5%;

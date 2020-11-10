@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import { Link } from 'react-router-dom' 
-import Filter from '../components/Filter.js'
+import Filter from './Filter.js'
 import DeleteSweepIcon from '@material-ui/icons/DeleteSweep';
 import Button from '@material-ui/core/Button';
 import chefHat from '@iconify-icons/mdi/chef-hat';
