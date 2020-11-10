@@ -122,7 +122,6 @@ class App extends Component {
          
           {/* Meal Show Page*/}
         <Route path='/meals/:id' render={(props)=> {
-          //this.state.mealArray showing [] when going to path directly
           let pathId= props.match.params.id
           let currentMeal = this.state.mealArray.find(meal => meal.id == pathId)
           return<MealShowPage meal={currentMeal} />}
