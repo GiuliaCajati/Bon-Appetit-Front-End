@@ -119,14 +119,20 @@ class App extends Component {
   deleteMeal = (selectedMealId) => {
     //Delete user meals... still need to make
     //set-up back end 
+    console.log(this.state.mealArray)
     fetch(mealURL + `${selectedMealId}`, {
-      method: 'DELETE'
-    })
-    .then(res => res.json())
-    .then(this.setState({
-      mealArray: this.state.mealArray.filter(meal => meal.id !== selectedMealId),
-      filteredMealArray: this.state.filteredMealArray.filter(meal => meal !== selectedMealId)
-    }))
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+    }
+    }).then(res => console.log(res)).then(
+      this.setState({
+        mealArray: this.state.mealArray.filter(meal => meal.id !== selectedMealId),
+        filteredMealArray: this.state.filteredMealArray.filter(meal => meal !== selectedMealId)
+      }),
+      console.log(this.state.mealArray)
+    )
+
   }
 
   addMeal = (newMealObject) => {
@@ -139,11 +145,12 @@ class App extends Component {
     })
     .then(res => res.json())
     .then(newMeal => {
-      this.setState({
+    this.setState({
         mealArray: [...this.state.mealArray, newMeal],
         filteredMealArray: [...this.state.filteredMealArray, newMeal]
       })
     })
+    
 }
   render(){
     return (
@@ -172,7 +179,7 @@ class App extends Component {
           {/* Meal Show Page*/}
         <Route path='/meals/:id' render={(props)=> {
           let pathId= props.match.params.id
-          let currentMeal = this.state.mealArray.find(meal => meal.id == pathId)
+          let currentMeal = this.state.mealArray.find(meal => meal.id === pathId)
           return<MealShowPage meal={currentMeal} />}
           }/>
 
