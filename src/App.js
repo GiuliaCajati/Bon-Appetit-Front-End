@@ -176,7 +176,7 @@ class App extends Component {
           return<MealShowPage meal={currentMeal} />}
           }/>
 
-        <Route path='/add_meal' component={NewMealForm}/>
+        <Route path='/add_meal' render={() => {return<NewMealForm/>}}/>
 
           {/* Profile Page */}
         <Route exact path='/profile' 
