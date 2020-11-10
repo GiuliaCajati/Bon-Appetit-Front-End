@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -49,6 +49,40 @@ const useStyles = makeStyles((theme) => ({
 export default function AddMeal() {
   const classes = useStyles();
 
+  //Setting State for create new meal
+  const [state , setState] = useState({
+    name: "",
+    photo_url: "",
+    instructions: "",
+    ingredients: "",
+    origin: null
+  })
+
+  //Input fealds (setting state)
+  const handleChange = (event) => {
+    const {id , value} = event.target   
+    setState(prevState => ({
+        ...prevState,
+        [id] : value
+    }))
+  }
+
+  //Sending info to App 
+  const handleSubmitClick = (event) => {
+    event.preventDefault();
+
+    let user = {
+      name: state.name,
+      photo_url: state.photo_url,
+      likes: 0,
+      instructions: state.instructions,
+      ingredients: state.ingredients,
+      origin: null
+    }
+    debugger
+  }
+
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -71,6 +105,7 @@ export default function AddMeal() {
                 id="name"
                 label="Name"
                 autoFocus
+                onChange={handleChange} 
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -82,30 +117,31 @@ export default function AddMeal() {
                 label="Photo URL"
                 name="photo_url"
                 autoComplete="photo_url"
+                onChange={handleChange} 
               />
             </Grid>
             <Grid item xs={12}>
             <TextField
-                id="outlined-multiline-static"
+                id="instructions"
                 label="Instructions"
-                name="Instructions"
+                name="instructions"
                 rows={12}
-                defaultValue="Default Value"
                 variant="outlined"
                 fullWidth
                 multiline
+                onChange={handleChange} 
                 />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                id="outlined-multiline-static"
-                label="Instructions"
-                name="Instructions"
+                id="ingredients"
+                label="Ingredients"
+                name="ingredients"
                 rows={8}
-                defaultValue="Default Value"
                 variant="outlined"
                 fullWidth
                 multiline
+                onChange={handleChange} 
               />
             </Grid>
             
@@ -116,6 +152,7 @@ export default function AddMeal() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleSubmitClick}
           >
             Add
           </Button>
