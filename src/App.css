@@ -8,47 +8,36 @@
 /* .MuiGridListTileBar-title{
   white-space: normal !important;
 } */
+/* Meal show page  */
 #meal-card-div{
   display: flex;
   justify-content: center;
   margin-top: 10%;
 }
 
-.user-img{
-  width: 150px;
-  border-radius: 50%;
-}
-
-#header-logo{
-  margin-left: 100px;
-  margin-right: 40%;
-  font-family: Snell Roundhand, cursive;
-}
-
-#user-name{
-  font-family: Snell Roundhand, cursive;
-  position: absolute;
-  margin-top: -10%;
-  margin-left: 10%;
-}
-
+/* User page  */
+/* user image  */
 .user-img-container{
   margin-right: 70%;
   padding-bottom: 1%;
   padding-top: 2%;
 }
-
-.user-top-meals{
-  position: absolute;
-  margin-top: -100px;
+.user-img{
+  width: 150px;
+  border-radius: 50%;
 }
 
-img{
-  width: 40%
+/* user name */
+ #user-name{
+  font-family: Snell Roundhand, cursive;
+  margin-top: 1%;
 }
 
+/* Bon Apptit */
 #header-logo{
-  margin-left: 20px
+  margin-left: 100px;
+  margin-right: 40%;
+  font-family: Snell Roundhand, cursive;
 }
 
 /* 404 page  */

@@ -95,7 +95,11 @@ class App extends Component {
   renderMealShowPage = (mealId) => {
       this.props.history.push(`/meals/${mealId}`)
   }
-          
+  
+  deleteMeal = () => {
+    //Delete user meals... still need to make
+  }
+
   render(){
     return (
       
@@ -133,7 +137,9 @@ class App extends Component {
                render={(props) => {
               return this.state.CurrentUser?(
                 <Profile currentUser={this.state.CurrentUser} 
-                CurrentUserData={this.state.CurrentUserData}/>
+                CurrentUserData={this.state.CurrentUserData}
+                deleteMeal={this.deleteMeal}
+                renderMealShowPage={this.renderMealShowPage}/>
               ) : ( 
                 <LoginForm setCurrentUser={this.setCurrentUser}
                 routerProps={props}/>  

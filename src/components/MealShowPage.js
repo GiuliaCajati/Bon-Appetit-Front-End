@@ -86,9 +86,6 @@ class RecipeReviewCard extends React.Component {
             <IconButton aria-label="Add to favorites">
                 <FavoriteIcon />
             </IconButton>
-            <IconButton aria-label="Share">
-                <ShareIcon />
-            </IconButton>
             <IconButton
                 className={classnames(classes.expand, {
                 [classes.expandOpen]: this.state.expanded,

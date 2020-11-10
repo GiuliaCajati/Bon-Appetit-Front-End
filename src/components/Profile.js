@@ -9,6 +9,9 @@ import InfoIcon from '@material-ui/icons/Info';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import { Link } from 'react-router-dom' 
 import Filter from '../components/Filter.js'
+import DeleteSweepIcon from '@material-ui/icons/DeleteSweep';
+import Button from '@material-ui/core/Button';
+import chefHat from '@iconify-icons/mdi/chef-hat';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,9 +42,12 @@ export default function TitlebarGridList(props) {
       </div>
       <div>
       <h1 id="user-name">{props.CurrentUserData.name} </h1>
-      <p id="user-top-meals">Top Meals: {props.CurrentUserData.meals.map(meal => <ol><li>{meal.name}</li></ol>)}</p>
-      
+      <p id="user-top-meals">Top Meals: {props.CurrentUserData.meals.map(meal =>  meal.name)}</p>
+        <Button variant="contained" color="primary">
+        👩‍🍳Add Meal
+        </Button>
       </div>
+    
     
       <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto'}}>
@@ -60,11 +66,11 @@ export default function TitlebarGridList(props) {
               title={meal.name}
               subtitle={<span>likes: {meal.likes}</span>}
               actionIcon={
-                <ThumbUp 
+                <DeleteSweepIcon
                   className={classes.margin}
-                  onClick={() => props.addLike(meal.id)}>
+                  onClick={() => props.deleteMeal(meal.id)}>
                   <InfoIcon />
-                </ThumbUp>
+                </DeleteSweepIcon>
               }
             />
           </GridListTile>

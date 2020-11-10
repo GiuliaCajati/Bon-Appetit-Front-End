@@ -120,7 +120,7 @@ export default function SignInSide(props) {
           <Icon icon={chefHat} width="90%"/>
           </Avatar>
           <Typography component="h1" variant="h5">
-            Bon Apetit!
+          Bon Appétit!
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
