@@ -170,23 +170,9 @@ class App extends Component {
     .then(this.props.history.push('/add_meal'))
 
   }
-  addMeal = (newMealObject) => {
-    //from New Meal Form... still need to make
-    //fix back end 
-    fetch(mealURL, {
-      method: 'POST',
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify(newMealObject)
-    })
-    .then(res => res.json())
-    .then(newMeal => {
-    this.setState({
-        mealArray: [...this.state.mealArray, newMeal],
-        filteredMealArray: [...this.state.filteredMealArray, newMeal]
-      })
-    })
+  
     
-}
+
   render(){
     return (
       
@@ -213,10 +199,8 @@ class App extends Component {
          
           {/* Meal Show Page*/}
         <Route path='/meals/:id' render={(props)=> {
-          debugger
           let pathId= props.match.params.id
           let currentMeal = this.state.mealArray.find(meal => meal.id === pathId)
-          
           return<MealShowPage meal={currentMeal} />}
           }/>
 
@@ -253,6 +237,7 @@ class App extends Component {
 
         {/* Meals Index Page*/}
         <Route path='/' render={()=>{
+                
                 return<RecepieGrid
                 filterMealArray={this.filterMealArray}
                 mealArray={this.state.filteredMealArray} 

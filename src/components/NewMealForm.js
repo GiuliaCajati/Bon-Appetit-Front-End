@@ -65,8 +65,8 @@ export default function AddMeal(props) {
     photo_url: "",
     instructions: "",
     ingredients: "",
-    origin_id: null,
-    originsArray: props.originsArray
+    origin_id: null
+    // originsArray: props.originsArray
   })
 
   //Input fealds (setting state)
@@ -82,6 +82,17 @@ export default function AddMeal(props) {
     //event.target.getAttribute("value....")
   }
 
+  const addMeal = (newMealObject) => {
+    //from New Meal Form... still need to make
+    //fix back end 
+    fetch("http://localhost:3000/meals/", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify(newMealObject)
+    })
+    .then(res => res.json())
+    .then(newMeal => {this.props.history.push(`/meals/${newMeal.id}`)}
+    )}
 
 
   //Sending info to App 
@@ -95,8 +106,11 @@ export default function AddMeal(props) {
       ingredients: state.ingredients,
       origin_id: state.origin_id
     }
+    addMeal(newMeal)
   }
 
+
+ 
 
   return (
     <div id="check-for-array">{props.originsArray == []?null:
