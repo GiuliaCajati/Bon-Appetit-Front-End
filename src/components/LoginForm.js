@@ -101,7 +101,7 @@ export default function SignInSide(props) {
         body: JSON.stringify(user)
     })
     .then(response => response .json())
-    .then(data => {
+    .then(data => { 
       // setState({
       //   badLogin: true
       // })

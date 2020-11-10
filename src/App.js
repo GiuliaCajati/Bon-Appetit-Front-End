@@ -13,6 +13,7 @@ import Profile from "./components/Profile"
 import LoginForm from './components/LoginForm.js'
 import NewUserForm from './components/NewUserForm.js'
 import NotFound from './components/NotFound'
+import NewMealForm from './components/NewMealForm'
 
 
 
@@ -115,12 +116,35 @@ class App extends Component {
       this.props.history.push(`/meals/${mealId}`)
   }
   
-  deleteMeal = () => {
+  deleteMeal = (selectedMealId) => {
     //Delete user meals... still need to make
+    //set-up back end 
+    fetch(mealURL + `${selectedMealId}`, {
+      method: 'DELETE'
+    })
+    .then(res => res.json())
+    .then(this.setState({
+      mealArray: this.state.mealArray.filter(meal => meal.id !== selectedMealId),
+      filteredMealArray: this.state.filteredMealArray.filter(meal => meal !== selectedMealId)
+    }))
   }
 
-  
-
+  addMeal = (newMealObject) => {
+    //from New Meal Form... still need to make
+    //fix back end 
+    fetch(mealURL, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify(newMealObject)
+    })
+    .then(res => res.json())
+    .then(newMeal => {
+      this.setState({
+        mealArray: [...this.state.mealArray, newMeal],
+        filteredMealArray: [...this.state.filteredMealArray, newMeal]
+      })
+    })
+}
   render(){
     return (
       
@@ -152,6 +176,7 @@ class App extends Component {
           return<MealShowPage meal={currentMeal} />}
           }/>
 
+        <Route path='/add_meal' component={NewMealForm}/>
 
           {/* Profile Page */}
         <Route exact path='/profile' 
