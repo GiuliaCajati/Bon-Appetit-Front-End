@@ -71,7 +71,8 @@ export default function SignInSide(props) {
   //Setting State for create new user 
   const [state , setState] = useState({
     name: "",
-    password: ""
+    password: "",
+    badLogin: false
   })
 
   //User text field (setting state)
@@ -79,7 +80,7 @@ export default function SignInSide(props) {
     const {id , value} = event.target   
     setState(prevState => ({
         ...prevState,
-        [id] : value
+        [id] : value,
     }))
   }
 
@@ -101,15 +102,29 @@ export default function SignInSide(props) {
     })
     .then(response => response .json())
     .then(data => {
-          props.setCurrentUser(data)
-          data.message?
-          props.routerProps.history.push('/login'):
-          props.routerProps.history.push('/profile') 
-        }) 
+      // setState({
+      //   badLogin: true
+      // })
+      props.setCurrentUser(data)
+      // data.message? 
+      //   props.routerProps.history.push('/login')
+      // :
+      //   props.routerProps.history.push('/profile') 
+      //   }) 
+      if(data.message){
+        props.routerProps.history.push('/login')
+      //   console.log("why tho")
+      //   setState({
+      //     badLogin: true
+      // }))
+      //   console.log(state.badLogin)
+      } else{
+        props.routerProps.history.push('/profile') 
+      }
+      }) 
         
   }
   //push(path, [state]) - (function) Pushes a new entry onto the history stack
-
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />

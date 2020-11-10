@@ -9,6 +9,12 @@ import InfoIcon from '@material-ui/icons/Info';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import { Link } from 'react-router-dom' 
 import Filter from '../components/Filter.js'
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,12 +34,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function TitlebarGridList(props) {
   const classes = useStyles();
+
+  const [value, setValue] = React.useState('names');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
 
   return (
 
     <div className={classes.root}>
+      <div>
+      <FormControl component="fieldset">
+      <FormLabel component="legend">Gender</FormLabel>
+      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+      <FormControlLabel value="names" control={<Radio />} label="Names" />
+      <FormControlLabel value="likes" control={<Radio />} label="Likes" />
+      <FormControlLabel value="author" control={<Radio />} label="Author" />
+      </RadioGroup>
+      </FormControl>
+      </div>
       
       <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto'}}>
