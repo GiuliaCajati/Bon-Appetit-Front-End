@@ -43,6 +43,27 @@ class App extends Component {
       })
     })
   }
+
+  // Promise.all([
+  //   fetch(`/api/url1`),
+  //   fetch(`/api/url2`),
+  // ])
+  // .then(([res1, res2]) => (
+  //   {
+  //     res1: res1.json(),
+  //     res2: res2.json(),
+  // }))
+  // .then(({res1, res2}) => {
+  //   this.setState({
+  //     state1: res1,
+  //     state2: res2,
+  //   });
+  // })
+  // .catch((error) => {
+  //   console.log(error);
+  // });
+
+ 
    
   //RecepieGrid: Add like (PATCH request)
   addLike = (mealId) => {
@@ -134,7 +155,6 @@ class App extends Component {
         mealArray: this.state.mealArray.filter(meal => meal.id !== selectedMealId),
         filteredMealArray: this.state.filteredMealArray.filter(meal => meal !== selectedMealId)
       }),
-      console.log(this.state.mealArray)
     )
 
   }
@@ -193,8 +213,10 @@ class App extends Component {
          
           {/* Meal Show Page*/}
         <Route path='/meals/:id' render={(props)=> {
+          debugger
           let pathId= props.match.params.id
           let currentMeal = this.state.mealArray.find(meal => meal.id === pathId)
+          
           return<MealShowPage meal={currentMeal} />}
           }/>
 
