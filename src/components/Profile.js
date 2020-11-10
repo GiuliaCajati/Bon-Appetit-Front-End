@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 import Filter from './Filter.js'
 import DeleteSweepIcon from '@material-ui/icons/DeleteSweep';
 import Button from '@material-ui/core/Button';
-import chefHat from '@iconify-icons/mdi/chef-hat';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,8 +45,8 @@ export default function TitlebarGridList(props) {
       dummyFoodarray: [...updatedArray]
     })
   }
-
-
+  
+  
   return (
     
     <div className={classes.root}>
@@ -56,8 +56,9 @@ export default function TitlebarGridList(props) {
       <div>
       <h1 id="user-name">{props.CurrentUserData.name} </h1>
       <p id="user-top-meals">Top Meals: {state.dummyFoodarray.map(meal =>  meal.name)}</p>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={() => props.renderNewMealForm()}>
         👩‍🍳Add Meal
+        
         </Button>
       </div>
     
@@ -100,20 +101,3 @@ export default function TitlebarGridList(props) {
 
 // import React, { Component } from 'react';
 
-// class Profile extends Component {
-//     render() {
-//         //show all meals 
-//         //add meal 
-//         return (
-//             <div>
-//                 {console.log(this.props.currentUser.meals)}
-//             <h2>Welcome {this.props.currentUser}</h2> 
-//             <div>{this.props.CurrentUserData.meals.map(meal => meal.name)}</div>
-    
-//             </div>
-            
-//         );
-//     }
-// }
-
-// export default Profile;

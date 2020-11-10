@@ -49,13 +49,14 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  // dorp down
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 300,
   },
 }));
 
-export default function AddMeal() {
+export default function AddMeal(props) {
   const classes = useStyles();
 
   //Setting State for create new meal
@@ -64,7 +65,8 @@ export default function AddMeal() {
     photo_url: "",
     instructions: "",
     ingredients: "",
-    origin: null
+    origin: null,
+    originsArray: props.originsArray
   })
 
   //Input fealds (setting state)
@@ -76,11 +78,13 @@ export default function AddMeal() {
     }))
   }
 
+
+
   //Sending info to App 
   const handleSubmitClick = (event) => {
     event.preventDefault();
 
-    let user = {
+    let newMeal = {
       name: state.name,
       photo_url: state.photo_url,
       likes: 0,
@@ -93,6 +97,8 @@ export default function AddMeal() {
 
 
   return (
+    <div id="check-for-array">{props.originsArray == []?null:
+
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -153,22 +159,16 @@ export default function AddMeal() {
                 onChange={handleChange} 
               />
             </Grid>
-            
           </Grid>
+          {/* Dorp down  */}
           <FormControl className={classes.formControl}>
-        <InputLabel htmlFor="grouped-select">Grouping</InputLabel>
+        <InputLabel htmlFor="grouped-select">Meal Origin</InputLabel>
         <Select defaultValue="" id="grouped-select">
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <ListSubheader>Category 1</ListSubheader>
-          <MenuItem value={1}>Option 1</MenuItem>
-          <MenuItem value={2}>Option 2</MenuItem>
-          <ListSubheader>Category 2</ListSubheader>
-          <MenuItem value={3}>Option 3</MenuItem>
-          <MenuItem value={4}>Option 4</MenuItem>
-        </Select>
-      </FormControl>
+          
+          {props.originsArray.map((origin)=> <MenuItem value={origin.id}>{origin.name}</MenuItem>)}
+          </Select>
+          </FormControl>
+    
           <Button
             type="submit"
             fullWidth
@@ -186,5 +186,6 @@ export default function AddMeal() {
         <Copyright />
       </Box>
     </Container>
+    }</div>
   );
 }

@@ -18,6 +18,8 @@ import NewMealForm from './components/NewMealForm'
 
 
 const mealURL="http://localhost:3000/meals/"
+
+const originsURL="http://localhost:3000/origins"
 class App extends Component {
   
   constructor() {
@@ -26,7 +28,8 @@ class App extends Component {
         CurrentUser: null,
         CurrentUserData: null,
         mealArray: [],
-        filteredMealArray: []
+        filteredMealArray: [],
+        originsArray: []
       }
   }
 
@@ -75,6 +78,7 @@ class App extends Component {
         })
 
   }
+  
 
   filterMealArray = (input) => {
     //search through meal array filter by name 
@@ -135,6 +139,17 @@ class App extends Component {
 
   }
 
+  renderNewMealForm = (props) => {
+    fetch(originsURL)
+    .then(data => data.json())
+    .then(origins => {
+      this.setState({
+        originsArray: origins
+      })
+    })
+    .then(this.props.history.push('/add_meal'))
+
+  }
   addMeal = (newMealObject) => {
     //from New Meal Form... still need to make
     //fix back end 
@@ -183,7 +198,9 @@ class App extends Component {
           return<MealShowPage meal={currentMeal} />}
           }/>
 
-        <Route path='/add_meal' render={() => {return<NewMealForm/>}}/>
+        <Route path='/add_meal' render={() => 
+            {return<NewMealForm  
+            originsArray={this.state.originsArray}/>}}/>
 
           {/* Profile Page */}
         <Route exact path='/profile' 
@@ -192,6 +209,7 @@ class App extends Component {
                 <Profile currentUser={this.state.CurrentUser} 
                 CurrentUserData={this.state.CurrentUserData}
                 deleteMeal={this.deleteMeal}
+                renderNewMealForm={this.renderNewMealForm}
                 renderMealShowPage={this.renderMealShowPage}/>
               ) : ( 
                 <LoginForm setCurrentUser={this.setCurrentUser}
