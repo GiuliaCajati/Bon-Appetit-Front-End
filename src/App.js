@@ -123,6 +123,9 @@ class App extends Component {
     //Delete user meals... still need to make
     //set-up back end 
     console.log(this.state.mealArray)
+    console.log(selectedMealId)
+    let changeAll = this.state.mealArray.filter(meal => meal.id !== selectedMealId)
+    let changeSome = this.state.CurrentUserData.meals.filter(meal => meal.id !== selectedMealId)
     fetch(mealURL + `${selectedMealId}`, {
       method: 'DELETE',
       headers: {
@@ -130,8 +133,11 @@ class App extends Component {
     }
     }).then(res => console.log(res)).then(
       this.setState({
-        mealArray: this.state.mealArray.filter(meal => meal.id !== selectedMealId),
-        filteredMealArray: this.state.filteredMealArray.filter(meal => meal !== selectedMealId)
+        mealArray: [...changeAll],
+        filteredMealArray: [...changeAll],
+        CurrentUserData:{
+          meals: [...changeSome]
+        }
       }),
       console.log(this.state.mealArray),
       console.log(this.state.filteredMealArray)
