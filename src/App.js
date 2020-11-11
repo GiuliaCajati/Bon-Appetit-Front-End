@@ -43,28 +43,7 @@ class App extends Component {
       })
     })
   }
-
-  // Promise.all([
-  //   fetch(`/api/url1`),
-  //   fetch(`/api/url2`),
-  // ])
-  // .then(([res1, res2]) => (
-  //   {
-  //     res1: res1.json(),
-  //     res2: res2.json(),
-  // }))
-  // .then(({res1, res2}) => {
-  //   this.setState({
-  //     state1: res1,
-  //     state2: res2,
-  //   });
-  // })
-  // .catch((error) => {
-  //   console.log(error);
-  // });
-
  
-   
   //RecepieGrid: Add like (PATCH request)
   addLike = (mealId) => {
     let likedMeal = this.state.mealArray.find(meal => meal.id === mealId)
@@ -179,8 +158,6 @@ class App extends Component {
   
   }
   
-    
-
   render(){
     return (
       
@@ -213,8 +190,9 @@ class App extends Component {
           return(
           <MealShowPage pathId = {pathId}/>)}}/>
 
-        <Route path='/add_meal' render={() => {
+        <Route path='/add_meal' render={(props) => {
             return<NewMealForm  
+            routerProps={props}
             originsArray={this.state.originsArray}/>}}/>
 
           {/* Profile Page */}

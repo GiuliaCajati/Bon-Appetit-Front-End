@@ -84,15 +84,16 @@ export default function AddMeal(props) {
 
   const addMeal = (newMealObject) => {
     //from New Meal Form... still need to make
-    //fix back end 
     fetch("http://localhost:3000/meals/", {
       method: 'POST',
       headers: { "Content-Type": "application/json"},
       body: JSON.stringify(newMealObject)
     })
     .then(res => res.json())
-    .then(newMeal => {this.props.history.push(`/meals/${newMeal.id}`)}
-    )}
+    .then(newMeal => {props.routerProps.history.push(`/meals/${newMeal.id}`)}
+    )
+    debugger
+  }
 
 
   //Sending info to App 
