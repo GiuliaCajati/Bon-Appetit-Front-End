@@ -155,6 +155,8 @@ class App extends Component {
         mealArray: this.state.mealArray.filter(meal => meal.id !== selectedMealId),
         filteredMealArray: this.state.filteredMealArray.filter(meal => meal !== selectedMealId)
       }),
+      console.log(this.state.mealArray),
+      console.log(this.state.filteredMealArray)
     )
 
   }
@@ -169,6 +171,12 @@ class App extends Component {
     })
     .then(this.props.history.push('/add_meal'))
 
+  }
+
+  getShowPageData = (props) => {
+    let pathId= props.match.params.id
+    let currentMeal = this.state.mealArray.find(meal => meal.id === pathId)
+  
   }
   
     
@@ -200,12 +208,13 @@ class App extends Component {
           {/* Meal Show Page*/}
         <Route path='/meals/:id' render={(props)=> {
           let pathId= props.match.params.id
-          let currentMeal = this.state.mealArray.find(meal => meal.id === pathId)
-          return<MealShowPage meal={currentMeal} />}
-          }/>
+          // meals={this.state.mealArray}
+          
+          return(
+          <MealShowPage pathId = {pathId}/>)}}/>
 
-        <Route path='/add_meal' render={() => 
-            {return<NewMealForm  
+        <Route path='/add_meal' render={() => {
+            return<NewMealForm  
             originsArray={this.state.originsArray}/>}}/>
 
           {/* Profile Page */}

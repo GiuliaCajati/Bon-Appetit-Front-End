@@ -17,6 +17,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+const mealURL="http://localhost:3000/meals/"
+
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -45,17 +47,37 @@ const styles = theme => ({
 
 class RecipeReviewCard extends React.Component {
 
-  state = { expanded: false };
+  state = { 
+    expanded: false,
+    mealArray: {},
+    origin: {}
+  };
+
+  componentDidMount() {
+    fetch(`${mealURL}/${this.props.pathId}`)
+    .then(data => data.json())
+    .then(meal => {
+      this.setState({
+        mealArray: meal,
+        origin: meal.origin
+      })
+    })
+    
+  }
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
   render() {
+    let currentMeal = this.state.mealArray
     const { classes } = this.props;
-
+    //this.componentDidMount()
+    console.log (this.state)
+    console.log(currentMeal)
+    console.log(!this.state.currentMeal?1:2)
     return (
-    <div id="check-for-array">{!this.props.meal?null: 
+    <div id="check-for-array">
         <div id="meal-card-div">
         <Card className={classes.card}>
             <CardHeader
@@ -69,17 +91,18 @@ class RecipeReviewCard extends React.Component {
                 <MoreVertIcon />
                 </IconButton>
             }
-            title={this.props.meal.name}
-            subheader={this.props.meal.origin}
+            title= {currentMeal.name}
+            subheader= {this.state.origin.name}
             />
             <CardMedia
             className={classes.media}
-            image={this.props.meal.photo_url}
+            image={currentMeal.photo_url}
             title="Paella dish"
             />
             <CardContent>
             <Typography component="p">
-            {this.props.meal.instructions}
+            {"title"}
+            {currentMeal.instructions}
             </Typography>
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
@@ -126,7 +149,7 @@ class RecipeReviewCard extends React.Component {
             </Collapse>
         </Card>
         </div>
-      }</div>
+      </div>
     );
   }
 }
