@@ -40,10 +40,18 @@
   font-family: Snell Roundhand, cursive;
 }
 
+.four-o-four-info{
+  margin-top: 25%;
+  color: white;
+}
+.four-o-four-button{
+padding:1%;
+}
+
 /* 404 page  */
 body.four-o-four-page {
   content: "";
-  background: url("https://i.imgur.com/O7Zfb6P.png") no-repeat fixed center;
+  background:url(https://images.unsplash.com/gifs/weird/weird-11.gif);
   background-size: cover;
   position: absolute;
   top: 0px;

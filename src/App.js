@@ -168,7 +168,6 @@ class App extends Component {
          <Route path='/meals/:id' component={Header}/>
          
          {/* Meals Page Header */}
-        <Route exact path='/' render={() => {return<Header/>}}/>
         <Route exact path='/meals' render={() => {return<Header/>}}/>
         {/* Profile Page Header */}
         <Route exact path='/profile' render={() =>{
@@ -223,14 +222,6 @@ class App extends Component {
                     routerProps={props}/>}/>
 
         {/* Meals Index Page*/}
-        <Route path='/' render={()=>{
-                
-                return<RecepieGrid
-                filterMealArray={this.filterMealArray}
-                mealArray={this.state.filteredMealArray} 
-                addLike={this.addLike}
-                renderMealShowPage={this.renderMealShowPage}
-                sortMeals={this.sortMeals}/>}}/>  
         <Route path='/meals' render={()=>{
                 return<RecepieGrid
                 filterMealArray={this.filterMealArray}

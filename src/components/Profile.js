@@ -50,16 +50,22 @@ export default function TitlebarGridList(props) {
   return (
     
     <div className={classes.root}>
-     <div class="user-img-container">
-      <img class="user-img" src={props.CurrentUserData.photo_url}/> 
-      </div>
+      <div class="user-info">
+        <div class="user-img-container">
+            <img class="user-img" src={props.CurrentUserData.photo_url}/> 
+        </div>
       <div>
-      <h1 id="user-name">{props.CurrentUserData.name} </h1>
-      <p id="user-top-meals">Top Meals: {state.dummyFoodarray.map(meal =>  meal.name)}</p>
-        <Button variant="contained" color="primary" onClick={() => props.renderNewMealForm()}>
-        👩‍🍳Add Meal
-        
-        </Button>
+      <div class="user-name-container">
+        <h1 id="user-name">{props.CurrentUserData.name} 
+            </h1>
+      </div>
+      <div class="user-top-meals-container">
+            <p id="user-top-meals">Top Meals: {state.dummyFoodarray.map(meal =>  meal.name)}</p>
+      </div>
+              <Button variant="contained" color="primary" onClick={() => props.renderNewMealForm()}>
+              👩‍🍳Add Meal
+              </Button>
+          </div>
       </div>
     
     
