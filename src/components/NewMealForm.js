@@ -65,36 +65,52 @@ export default function AddMeal(props) {
     photo_url: "",
     instructions: "",
     ingredients: "",
-    origin: null,
-    originsArray: props.originsArray
+    origin_id: null
+    // originsArray: props.originsArray
   })
 
   //Input fealds (setting state)
   const handleChange = (event) => {
-    const {id , value} = event.target   
+    let {id , value} = event.target   
+    if(value === 0 ){
+      value = event.target.getAttribute("data-value")
+    }
     setState(prevState => ({
         ...prevState,
         [id] : value
     }))
+    //event.target.getAttribute("value....")
   }
 
+  const addMeal = (newMealObject) => {
+    //from New Meal Form... still need to make
+    //fix back end 
+    fetch("http://localhost:3000/meals/", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify(newMealObject)
+    })
+    .then(res => res.json())
+    .then(newMeal => {this.props.history.push(`/meals/${newMeal.id}`)}
+    )}
 
 
   //Sending info to App 
   const handleSubmitClick = (event) => {
     event.preventDefault();
-
     let newMeal = {
       name: state.name,
       photo_url: state.photo_url,
       likes: 0,
       instructions: state.instructions,
       ingredients: state.ingredients,
-      origin: null
+      origin_id: state.origin_id
     }
-    debugger
+    addMeal(newMeal)
   }
 
+
+ 
 
   return (
     <div id="check-for-array">{props.originsArray == []?null:
@@ -160,13 +176,20 @@ export default function AddMeal(props) {
               />
             </Grid>
           </Grid>
-          {/* Dorp down  */}
+
+          {/* Drop down  */}
           <FormControl className={classes.formControl}>
-        <InputLabel htmlFor="grouped-select">Meal Origin</InputLabel>
-        <Select defaultValue="" id="grouped-select">
-          
-          {props.originsArray.map((origin)=> <MenuItem value={origin.id}>{origin.name}</MenuItem>)}
-          </Select>
+          <InputLabel htmlFor="grouped-select">Meal Origin</InputLabel>
+              <Select defaultValue="" id="grouped-select">
+                {props.originsArray.map(
+                (origin)=> 
+                
+                  <MenuItem 
+                  value={origin.id}
+                  id="origin_id" 
+                  onClick={handleChange}>{origin.name}
+                  </MenuItem>)}
+              </Select>
           </FormControl>
     
           <Button
@@ -177,7 +200,7 @@ export default function AddMeal(props) {
             className={classes.submit}
             onClick={handleSubmitClick}
           >
-            Add
+            Add Meal
           </Button>
          
         </form>

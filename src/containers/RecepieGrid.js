@@ -67,10 +67,11 @@ export default function TitlebarGridList(props) {
         <Filter filterMealArray={props.filterMealArray}/> 
         </GridListTile>
         {props.mealArray.map((meal) => (
+       
           <GridListTile key={meal.id}>
             <img src={meal.photo_url} alt={meal.name}
             onClick={() => props.renderMealShowPage(meal.id)}/>
-            
+           
             {/* <Link to={`/meals/${meal.id}`}></Link> */}
           
             <GridListTileBar

@@ -43,6 +43,27 @@ class App extends Component {
       })
     })
   }
+
+  // Promise.all([
+  //   fetch(`/api/url1`),
+  //   fetch(`/api/url2`),
+  // ])
+  // .then(([res1, res2]) => (
+  //   {
+  //     res1: res1.json(),
+  //     res2: res2.json(),
+  // }))
+  // .then(({res1, res2}) => {
+  //   this.setState({
+  //     state1: res1,
+  //     state2: res2,
+  //   });
+  // })
+  // .catch((error) => {
+  //   console.log(error);
+  // });
+
+ 
    
   //RecepieGrid: Add like (PATCH request)
   addLike = (mealId) => {
@@ -152,23 +173,9 @@ class App extends Component {
     .then(this.props.history.push('/add_meal'))
 
   }
-  addMeal = (newMealObject) => {
-    //from New Meal Form... still need to make
-    //fix back end 
-    fetch(mealURL, {
-      method: 'POST',
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify(newMealObject)
-    })
-    .then(res => res.json())
-    .then(newMeal => {
-    this.setState({
-        mealArray: [...this.state.mealArray, newMeal],
-        filteredMealArray: [...this.state.filteredMealArray, newMeal]
-      })
-    })
+  
     
-}
+
   render(){
     return (
       
@@ -234,6 +241,7 @@ class App extends Component {
 
         {/* Meals Index Page*/}
         <Route path='/' render={()=>{
+                
                 return<RecepieGrid
                 filterMealArray={this.filterMealArray}
                 mealArray={this.state.filteredMealArray} 
