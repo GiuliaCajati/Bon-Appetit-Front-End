@@ -78,7 +78,7 @@ export default function AddMeal(props) {
     setState(prevState => ({
         ...prevState,
         [id] : value
-    }))
+    })) 
     //event.target.getAttribute("value....")
   }
 
@@ -92,7 +92,6 @@ export default function AddMeal(props) {
     .then(res => res.json())
     .then(newMeal => {props.routerProps.history.push(`/meals/${newMeal.id}`)}
     )
-    debugger
   }
 
 
@@ -105,8 +104,10 @@ export default function AddMeal(props) {
       likes: 0,
       instructions: state.instructions,
       ingredients: state.ingredients,
-      origin_id: state.origin_id
+      origin_id: state.origin_id,
+      user_id: props.userID
     }
+    debugger
     addMeal(newMeal)
   }
 

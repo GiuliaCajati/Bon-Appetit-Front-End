@@ -48,6 +48,10 @@
 padding:1%;
 }
 
+#login-text{
+  font-family: Snell Roundhand, cursive;
+}
+
 /* 404 page  */
 body.four-o-four-page {
   content: "";

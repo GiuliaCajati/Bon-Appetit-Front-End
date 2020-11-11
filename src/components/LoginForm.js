@@ -137,6 +137,7 @@ export default function SignInSide(props) {
           <Icon icon={chefHat} width="90%"/>
           </Avatar>
           <Typography component="h1" variant="h5">
+            
           Bon Appétit!
           </Typography>
           <form className={classes.form} noValidate>
@@ -190,6 +191,11 @@ export default function SignInSide(props) {
             </Grid>
            
           </form>
+        </div>
+        <div id="login-text">
+          <h3>
+          Tap into your inner chef and get inspired by the art of cooking! 
+          </h3>
         </div>
       </Grid>
     </Grid>
