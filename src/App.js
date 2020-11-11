@@ -118,6 +118,7 @@ class App extends Component {
   //RecepieGrid(click meal) => Recepie Show Page 
   renderMealShowPage = (mealId) => {
       this.props.history.push(`/meals/${mealId}`)
+      debugger
   }
   
   deleteMeal = (selectedMealId) => {
@@ -134,7 +135,8 @@ class App extends Component {
         mealArray: this.state.mealArray.filter(meal => meal.id !== selectedMealId),
         filteredMealArray: this.state.filteredMealArray.filter(meal => meal !== selectedMealId)
       }),
-      console.log(this.state.mealArray)
+      console.log(this.state.mealArray),
+      console.log(this.state.filteredMealArray)
     )
 
   }
@@ -195,6 +197,7 @@ class App extends Component {
         <Route path='/meals/:id' render={(props)=> {
           let pathId= props.match.params.id
           let currentMeal = this.state.mealArray.find(meal => meal.id === pathId)
+          debugger
           return<MealShowPage meal={currentMeal} />}
           }/>
 

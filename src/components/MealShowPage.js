@@ -55,7 +55,7 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
 
     return (
-    <div id="check-for-array">{!this.props.meal?null:
+    <div id="check-for-array">HI{!this.props.meal?null:
         <div id="meal-card-div">
         <Card className={classes.card}>
             <CardHeader
