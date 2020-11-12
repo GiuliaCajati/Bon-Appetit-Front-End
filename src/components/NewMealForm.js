@@ -92,6 +92,7 @@ export default function AddMeal(props) {
     .then(res => res.json())
     .then(newMeal => {props.routerProps.history.push(`/meals/${newMeal.id}`)}
     )
+    debugger
   }
 
 

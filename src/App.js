@@ -43,7 +43,9 @@ class App extends Component {
         filteredMealArray: meals
       })
     })
+  
   }
+  
  
   //RecepieGrid: Add like (PATCH request)
   addLike = (mealId) => {
@@ -121,8 +123,6 @@ class App extends Component {
   }
   
   deleteMeal = (selectedMealId) => {
-    //Delete user meals... still need to make
-    //set-up back end 
     console.log(this.state.mealArray)
     console.log(selectedMealId)
     let changeAll = this.state.mealArray.filter(meal => meal.id !== selectedMealId)
@@ -136,13 +136,17 @@ class App extends Component {
       this.setState({
         mealArray: [...changeAll],
         filteredMealArray: [...changeAll],
-        CurrentUserData:{
+        CurrentUserData:{ 
+          id: this.state.CurrentUserData.id, 
+          name: this.state.CurrentUserData.name,
+          photo_url: this.state.CurrentUserData.photo_url,
           meals: [...changeSome]
         }
       }),
       console.log(this.state.mealArray),
       console.log(this.state.filteredMealArray)
     )
+    debugger
 
   }
 

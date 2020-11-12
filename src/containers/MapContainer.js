@@ -33,7 +33,7 @@ export default class MapContainer extends React.Component {
             
                 originsArray={this.state.originsArray}
 
-				googleMapURL={will add}
+				googleMapURL={``}
 				loadingElement={<div style={{ height: `100%`}} />}
 				containerElement={<div style={{ height: `600px`, width: `600px`, display:'block'}} />}
 				mapElement={<div style={{ height: `100%` }} />}

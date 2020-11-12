@@ -9,20 +9,15 @@ import { InfoWindow } from "react-google-maps";
 
 const MealMap = withScriptjs(withGoogleMap((props) =>{
 
-  // const markers = props.doctors.map( doctor => <MealMarker
-  //                   key={doctor.uid}
-  //                   doctor={doctor}
-  //                   location={{lat: doctor.closestPractice.lat, lng: doctor.closestPractice.lon}}
-  //                 />);
-
   const markers = props.originsArray.map(origin => 
 
   <MealMarker
         
                   key={origin.id}
                   origin={origin.name}
+                  test={origin.meals}
+                  debugger
                   location= {{lat: origin.latitude , lng: origin.longitude}}/>);
-
 
   return (
   
@@ -30,7 +25,7 @@ const MealMap = withScriptjs(withGoogleMap((props) =>{
         defaultZoom={14}
         center={ { lat: 38.897570, lng: -77.032558 } }
         >
-      
+
         {markers}
       </GoogleMap>
     );
