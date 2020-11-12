@@ -191,9 +191,8 @@ class App extends Component {
         <Route path='/meals/:id' render={(props)=> {
           let pathId= props.match.params.id
           // meals={this.state.mealArray}
-          
           return(
-          <MealShowPage pathId = {pathId}/>)}}/>
+          <MealShowPage pathId = {pathId} />)}}/>
 
         <Route path='/add_meal' render={(props) => {
             return<NewMealForm  

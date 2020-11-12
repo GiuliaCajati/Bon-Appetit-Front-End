@@ -50,7 +50,8 @@ class RecipeReviewCard extends React.Component {
   state = { 
     expanded: false,
     meals: {},
-    origin: {}
+    origin: {},
+    userPhoto: ""
   };
 
   componentDidMount() {
@@ -65,15 +66,31 @@ class RecipeReviewCard extends React.Component {
     
   }
 
+  getUserData = () => {
+    fetch(`http://localhost:3000/users/${this.state.meals.user_id}`)
+    .then(data => data.json())
+    .then(userData =>{
+      this.setState({
+        userPhoto: userData.photo_url
+      })
+      debugger
+    })
+  }
+
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
   render() {
     const { classes } = this.props;
-    
     let currentMeal = this.state.meals
-    //debugger
+
+    if(this.state.meals.user_id && this.state.userPhoto === ""){
+      this.getUserData()
+    }
+    
+
+    console.log(this.props)
     console.log (this.state)
     console.log(currentMeal)
     return (
@@ -82,8 +99,8 @@ class RecipeReviewCard extends React.Component {
         <Card className={classes.card}>
             <CardHeader
             avatar={
-                <Avatar aria-label="Recipe" className={classes.avatar}>
-                YUM
+                <Avatar aria-label="Recipe" className={classes.avatar} src = {this.state.userPhoto}>
+                  
                 </Avatar>
             }
             action={
