@@ -92,7 +92,7 @@ class RecipeReviewCard extends React.Component {
                 </IconButton>
             }
             title= {currentMeal.name}
-            //subheader= {this.state.origin.name}
+            subheader= {this.state.origin.name}
             />
             <CardMedia
             className={classes.media}

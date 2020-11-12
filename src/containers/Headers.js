@@ -1,13 +1,13 @@
-import React from 'react'
+import { Link } from 'react-router-dom' 
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import PersonPinIcon from '@material-ui/icons/PersonPin'
-import HomeIcon from '@material-ui/icons/Home'
+
 import ExitToApp from '@material-ui/icons/ExitToApp'
 import RestaurantMenu from '@material-ui/icons/RestaurantMenu'
-import { Link } from 'react-router-dom' 
+
 
 const useStyles = makeStyles({
   //material UI style 
@@ -22,11 +22,14 @@ const useStyles = makeStyles({
     <Paper className={classes.root}>
      
       <Tabs
-        centered
+      inkBarStyle={{background: 'blue'}}
+      centered
       >
         
+        <Link to='/meals' >
       <h2 id="header-logo">Bon Appétit</h2>
-      
+      </Link>
+   
       
 
        <Link to="/meals"><Tab icon={<RestaurantMenu/>}/></Link>
