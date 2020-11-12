@@ -7,6 +7,7 @@ import PersonPinIcon from '@material-ui/icons/PersonPin'
 
 import ExitToApp from '@material-ui/icons/ExitToApp'
 import RestaurantMenu from '@material-ui/icons/RestaurantMenu'
+import PublicIcon from '@material-ui/icons/Public';
 
 
 const useStyles = makeStyles({
@@ -34,7 +35,9 @@ const useStyles = makeStyles({
 
        <Link to="/meals"><Tab icon={<RestaurantMenu/>}/></Link>
        <Link to="/profile"><Tab icon={<PersonPinIcon />}/></Link>
+       <Link to="/map"><Tab icon={<PublicIcon />}/></Link>
        <Link to="/login"><Tab icon={<ExitToApp />}/></Link>
+
        
       </Tabs>
     </Paper>

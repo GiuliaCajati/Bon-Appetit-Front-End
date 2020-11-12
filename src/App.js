@@ -14,6 +14,7 @@ import LoginForm from './components/LoginForm.js'
 import NewUserForm from './components/NewUserForm.js'
 import NotFound from './components/NotFound'
 import NewMealForm from './components/NewMealForm'
+import MapContainer from  './containers/MapContainer'
 
 
 
@@ -171,6 +172,9 @@ class App extends Component {
         <Switch>
          {/* Header */}
          <Route path='/meals/:id' component={Header}/>
+
+          {/* map */}
+         <Route path='/map' component={Header}/>
          
          {/* Meals Page Header */}
         <Route exact path='/meals' render={() => {return<Header/>}}/>
@@ -185,6 +189,9 @@ class App extends Component {
       <div className="App">
         <Switch>
           {/* Body */}
+
+          {/* map */}
+        <Route path='/map' component={MapContainer}/>
          
           {/* Meal Show Page*/}
         <Route path='/meals/:id' render={(props)=> {
