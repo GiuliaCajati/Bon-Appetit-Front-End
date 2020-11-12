@@ -41,13 +41,17 @@
   
 }
 
+#map-container{
+margin-left: 30%;
+margin-top: 2%;
+}
 /* Bon Apptit */
 #header-logo{
   font-family: Snell Roundhand, cursive;
   color:black;
   position: absolute !important;
   /* padding-right:10% !important; */
-  margin-left:-30%;
+  margin-left:-20%;
 
 }
 
