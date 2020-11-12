@@ -14,7 +14,7 @@ import LoginForm from './components/LoginForm.js'
 import NewUserForm from './components/NewUserForm.js'
 import NotFound from './components/NotFound'
 import NewMealForm from './components/NewMealForm'
-import MapContainer from  './containers/MapContainer'
+import Container from  './containers/Container'
 
 
 
@@ -191,7 +191,11 @@ class App extends Component {
           {/* Body */}
 
           {/* map */}
-        <Route path='/map' component={MapContainer}/>
+        <Route exact path='/map'
+                  render={() => <Container 
+                 mealArray ={this.state.mealArray}
+                 originsArray ={this.state.originsArray} />}/>
+
          
           {/* Meal Show Page*/}
         <Route path='/meals/:id' render={(props)=> {

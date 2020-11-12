@@ -105,7 +105,7 @@ export default function AddMeal(props) {
       instructions: state.instructions,
       ingredients: state.ingredients,
       origin_id: state.origin_id,
-      user_id: props.userID
+      user_id: props.user
     }
     debugger
     addMeal(newMeal)

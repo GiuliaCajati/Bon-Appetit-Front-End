@@ -1,22 +1,44 @@
 
-// DoctorMapContainer.js
 
 import React from "react";
 import MealMap from "../components/MealMap";
 
-export default class DoctorsMapContainer extends React.Component {
+const mealURL="http://localhost:3000/meals/"
+const originsURL="http://localhost:3000/origins"
+export default class MapContainer extends React.Component {
+
+    constructor() {
+        super()
+          this.state = {
+            originsArray: []
+          }
+      }
+   
+    componentDidMount() {
+        fetch(originsURL)
+        .then(data => data.json())
+        .then(origins => {
+          this.setState({
+            originsArray: origins
+        })
+      })
+    }
+
 
 	render() {
 		return (
-            <div id= "map-container">
-			<MealMap 
-				doctors={this.props.doctors}
-				googleMapURL={`https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&v=3.exp&libraries=geometry,drawing,places`}
-				loadingElement={<div style={{ height: `100%` }} />}
-				containerElement={<div style={{ height: `600px`, width: `600px` }} />}
+        
+            <MealMap 
+
+            
+                originsArray={this.state.originsArray}
+
+				googleMapURL={will add}
+				loadingElement={<div style={{ height: `100%`}} />}
+				containerElement={<div style={{ height: `600px`, width: `600px`, display:'block'}} />}
 				mapElement={<div style={{ height: `100%` }} />}
 			/>
-            </div>
+        
 		);
 	}
 }
