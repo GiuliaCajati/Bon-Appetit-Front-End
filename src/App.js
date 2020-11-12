@@ -95,10 +95,9 @@ class App extends Component {
       case "names":
         sortedMeals= filteredMealArray.sort((a,b) => a.name > b.name ? 1 : -1)
       case "likes":
-        sortedMeals =filteredMealArray.sort((a,b) => a.likes > b.likes ? -1 : 1)
-      // case "author":
-        //user?
-        // return sortedMeals.sort((a,b) => a.user.name > b.name ? 1 : -1)
+        sortedMeals = filteredMealArray.sort((a,b) => a.likes > b.likes ? 1 : -1)
+      case "author":
+        sortedMeals = filteredMealArray.sort((a,b) => a.user_id > b.user_id ? 1 : -1)
       default:
         sortedMeals=  filteredMealArray
     
@@ -194,10 +193,17 @@ class App extends Component {
           return(
           <MealShowPage pathId = {pathId} />)}}/>
 
-        <Route path='/add_meal' render={(props) => {
-            return<NewMealForm  
-            routerProps={props}
-            originsArray={this.state.originsArray}/>}}/>
+        <Route path='/add_meal' 
+            render={(props) => {
+            return this.state.CurrentUser?(
+            <NewMealForm routerProps={props}
+            user={this.state.CurrentUserData.id}
+            originsArray={this.state.originsArray}/>
+            ) : ( 
+              <LoginForm setCurrentUser={this.setCurrentUser}
+              routerProps={props}/>  
+            )
+            }}/>
 
           {/* Profile Page */}
         <Route exact path='/profile' 

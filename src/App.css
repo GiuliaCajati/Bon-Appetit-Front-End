@@ -8,6 +8,11 @@
 /* .MuiGridListTileBar-title{
   white-space: normal !important;
 } */
+
+#form-title{
+  font-family: Snell Roundhand, cursive;
+
+}
 /* Meal show page  */
 #meal-card-div{
   display: flex;
@@ -32,12 +37,18 @@
   font-family: Snell Roundhand, cursive;
   margin-top: 1%;
 }
+#user-top-meals{
+  
+}
 
 /* Bon Apptit */
 #header-logo{
-  margin-left: 100px;
-  margin-right: 40%;
   font-family: Snell Roundhand, cursive;
+  color:black;
+  position: absolute !important;
+  /* padding-right:10% !important; */
+  margin-left:-30%;
+
 }
 
 .four-o-four-info{
@@ -46,6 +57,10 @@
 }
 .four-o-four-button{
 padding:1%;
+}
+
+#login-text{
+  font-family: Snell Roundhand, cursive;
 }
 
 /* 404 page  */

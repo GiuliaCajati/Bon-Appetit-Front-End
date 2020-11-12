@@ -118,7 +118,7 @@ class RecipeReviewCard extends React.Component {
             />
             <CardContent>
             <Typography component="p">
-            {"title"}
+            
             {currentMeal.instructions}
             </Typography>
             </CardContent>
