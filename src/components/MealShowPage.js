@@ -49,7 +49,7 @@ class RecipeReviewCard extends React.Component {
 
   state = { 
     expanded: false,
-    mealArray: {},
+    meals: {},
     origin: {}
   };
 
@@ -58,7 +58,7 @@ class RecipeReviewCard extends React.Component {
     .then(data => data.json())
     .then(meal => {
       this.setState({
-        mealArray: meal,
+        meals: meal,
         origin: meal.origin
       })
     })
@@ -70,12 +70,12 @@ class RecipeReviewCard extends React.Component {
   };
 
   render() {
-    let currentMeal = this.state.mealArray
     const { classes } = this.props;
-    //this.componentDidMount()
+    
+    let currentMeal = this.state.meals
+    //debugger
     console.log (this.state)
     console.log(currentMeal)
-    console.log(!this.state.currentMeal?1:2)
     return (
     <div id="check-for-array">
         <div id="meal-card-div">
@@ -92,7 +92,7 @@ class RecipeReviewCard extends React.Component {
                 </IconButton>
             }
             title= {currentMeal.name}
-            subheader= {this.state.origin.name}
+            subheader= {this.state.origin?this.state.origin.name:"none"}
             />
             <CardMedia
             className={classes.media}

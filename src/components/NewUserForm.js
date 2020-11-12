@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/user/louishansel)',
+    backgroundImage: 'url(https://source.unsplash.com/user/brookelark)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -116,9 +116,9 @@ export default function SignInSide(props) {
           <Avatar className={classes.avatar} >
           <Icon icon={chefHat} width="90%"/>
           </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign Up
-          </Typography>
+          <h1 id="form-title" >
+          Bon Appétit!
+          </h1>
           <form className={classes.form} noValidate>
             <TextField
               variant="outlined"
@@ -162,6 +162,7 @@ export default function SignInSide(props) {
             />
            {/* conditionally render button if sign-up  is selected??? */}
             <Button
+
               type="submit"
               fullWidth
               variant="contained"
@@ -174,6 +175,11 @@ export default function SignInSide(props) {
             </Button>
            
           </form>
+        </div>
+        <div id="login-text">
+          <h3>
+          Tap into your inner chef and get inspired by the art of cooking! 
+          </h3>
         </div>
       </Grid>
     </Grid>

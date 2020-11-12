@@ -8,6 +8,11 @@
 /* .MuiGridListTileBar-title{
   white-space: normal !important;
 } */
+
+#form-title{
+  font-family: Snell Roundhand, cursive;
+
+}
 /* Meal show page  */
 #meal-card-div{
   display: flex;
@@ -31,6 +36,9 @@
  #user-name{
   font-family: Snell Roundhand, cursive;
   margin-top: 1%;
+}
+#user-top-meals{
+  
 }
 
 /* Bon Apptit */

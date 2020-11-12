@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage: 'url(https://source.unsplash.com/user/brookelark)',
-
     //https://source.unsplash.com/user/louishansel
     backgroundRepeat: 'no-repeat',
     backgroundColor:
@@ -104,29 +103,16 @@ export default function SignInSide(props) {
     })
     .then(response => response .json())
     .then(data => { 
-      // setState({
-      //   badLogin: true
-      // })
       props.setCurrentUser(data)
-      // data.message? 
-      //   props.routerProps.history.push('/login')
-      // :
-      //   props.routerProps.history.push('/profile') 
-      //   }) 
+
       if(data.message){
         props.routerProps.history.push('/login')
-      //   console.log("why tho")
-      //   setState({
-      //     badLogin: true
-      // }))
-      //   console.log(state.badLogin)
       } else{
         props.routerProps.history.push('/profile') 
       }
       }) 
         
   }
-  //push(path, [state]) - (function) Pushes a new entry onto the history stack
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -137,8 +123,9 @@ export default function SignInSide(props) {
           <Icon icon={chefHat} width="90%"/>
           </Avatar>
           <Typography component="h1" variant="h5">
-            
+          <h1 id="form-title" >
           Bon Appétit!
+          </h1>
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -184,8 +171,10 @@ export default function SignInSide(props) {
           
               </Grid>
               <Grid item>
-                <Link href="create_account" variant="body2">
+                <Link href="create_account"  variant="body2"><b>
                   {"Don't have an account? Sign Up"}
+                </b>
+                  
                 </Link>
               </Grid>
             </Grid>
@@ -194,7 +183,7 @@ export default function SignInSide(props) {
         </div>
         <div id="login-text">
           <h3>
-          Tap into your inner chef and get inspired by the art of cooking! 
+          Tap into your inner chef, and get inspired by the art of cooking! 
           </h3>
         </div>
       </Grid>

@@ -60,7 +60,7 @@ export default function TitlebarGridList(props) {
             </h1>
       </div>
       <div class="user-top-meals-container">
-            <p id="user-top-meals">Top Meals: {state.dummyFoodarray.map(meal =>  meal.name)}</p>
+            <p id="user-top-meals"><b>Top Meals:</b> {state.dummyFoodarray.map(meal =>  meal.name + ", ")}</p>
       </div>
               <Button variant="contained" color="primary" onClick={() => props.renderNewMealForm()}>
               👩‍🍳Add Meal
