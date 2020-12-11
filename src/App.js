@@ -16,7 +16,7 @@ import NotFound from './components/NotFound'
 import NewMealForm from './components/NewMealForm'
 import Container from  './containers/Container'
 
-const mealURL="https://aqueous-depths-38272.herokuapp.com/"
+const mealURL="https://aqueous-depths-38272.herokuapp.com/meals/"
 const originsURL="https://aqueous-depths-38272.herokuapp.com/origins"
 
 //const mealURL="http://localhost:3000/meals/"
