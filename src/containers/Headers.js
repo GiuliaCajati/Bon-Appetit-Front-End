@@ -4,7 +4,6 @@ import Paper from '@material-ui/core/Paper'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import PersonPinIcon from '@material-ui/icons/PersonPin'
-
 import ExitToApp from '@material-ui/icons/ExitToApp'
 import RestaurantMenu from '@material-ui/icons/RestaurantMenu'
 import PublicIcon from '@material-ui/icons/Public';

@@ -16,11 +16,11 @@ import NotFound from './components/NotFound'
 import NewMealForm from './components/NewMealForm'
 import Container from  './containers/Container'
 
+const mealURL="https://aqueous-depths-38272.herokuapp.com/"
+const originsURL="https://aqueous-depths-38272.herokuapp.com/origins"
 
-
-const mealURL="http://localhost:3000/meals/"
-
-const originsURL="http://localhost:3000/origins"
+//const mealURL="http://localhost:3000/meals/"
+//const originsURL="http://localhost:3000/origins"
 class App extends Component {
   
   constructor() {
@@ -174,6 +174,8 @@ class App extends Component {
       <Fragment>
       <div className="App">
         <Switch>
+          <Route exact path="/" component= />
+
          {/* Header */}
          <Route path='/meals/:id' component={Header}/>
 
