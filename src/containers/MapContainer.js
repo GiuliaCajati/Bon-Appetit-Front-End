@@ -3,8 +3,11 @@
 import React from "react";
 import MealMap from "../components/MealMap";
 
-const mealURL="http://localhost:3000/meals/"
-const originsURL="http://localhost:3000/origins"
+const mealURL="https://aqueous-depths-38272.herokuapp.com/"
+const originsURL="https://aqueous-depths-38272.herokuapp.com/origins"
+
+// const mealURL="http://localhost:3000/meals/"
+// const originsURL="http://localhost:3000/origins"
 export default class MapContainer extends React.Component {
 
     constructor() {
