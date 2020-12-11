@@ -174,7 +174,7 @@ class App extends Component {
       <Fragment>
       <div className="App">
         <Switch>
-          <Route exact path="/" component= />
+          <Route exact path="/" component={Header} />
 
          {/* Header */}
          <Route path='/meals/:id' component={Header}/>
