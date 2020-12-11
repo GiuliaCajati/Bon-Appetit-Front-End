@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Bon-Appetit-Front-End/static/css/main.524bca0d.chunk.css",
-    "main.js": "/Bon-Appetit-Front-End/static/js/main.67d9b057.chunk.js",
-    "main.js.map": "/Bon-Appetit-Front-End/static/js/main.67d9b057.chunk.js.map",
-    "runtime-main.js": "/Bon-Appetit-Front-End/static/js/runtime-main.4cbf6690.js",
-    "runtime-main.js.map": "/Bon-Appetit-Front-End/static/js/runtime-main.4cbf6690.js.map",
-    "static/js/2.e296b287.chunk.js": "/Bon-Appetit-Front-End/static/js/2.e296b287.chunk.js",
-    "static/js/2.e296b287.chunk.js.map": "/Bon-Appetit-Front-End/static/js/2.e296b287.chunk.js.map",
-    "static/js/3.cb4474f6.chunk.js": "/Bon-Appetit-Front-End/static/js/3.cb4474f6.chunk.js",
-    "static/js/3.cb4474f6.chunk.js.map": "/Bon-Appetit-Front-End/static/js/3.cb4474f6.chunk.js.map",
-    "index.html": "/Bon-Appetit-Front-End/index.html",
-    "static/css/main.524bca0d.chunk.css.map": "/Bon-Appetit-Front-End/static/css/main.524bca0d.chunk.css.map",
-    "static/js/2.e296b287.chunk.js.LICENSE.txt": "/Bon-Appetit-Front-End/static/js/2.e296b287.chunk.js.LICENSE.txt"
+    "main.css": "/bon-appetit-front-end/static/css/main.524bca0d.chunk.css",
+    "main.js": "/bon-appetit-front-end/static/js/main.e472e2b9.chunk.js",
+    "main.js.map": "/bon-appetit-front-end/static/js/main.e472e2b9.chunk.js.map",
+    "runtime-main.js": "/bon-appetit-front-end/static/js/runtime-main.ef3b0439.js",
+    "runtime-main.js.map": "/bon-appetit-front-end/static/js/runtime-main.ef3b0439.js.map",
+    "static/js/2.f8862e85.chunk.js": "/bon-appetit-front-end/static/js/2.f8862e85.chunk.js",
+    "static/js/2.f8862e85.chunk.js.map": "/bon-appetit-front-end/static/js/2.f8862e85.chunk.js.map",
+    "static/js/3.7cff1d03.chunk.js": "/bon-appetit-front-end/static/js/3.7cff1d03.chunk.js",
+    "static/js/3.7cff1d03.chunk.js.map": "/bon-appetit-front-end/static/js/3.7cff1d03.chunk.js.map",
+    "index.html": "/bon-appetit-front-end/index.html",
+    "static/css/main.524bca0d.chunk.css.map": "/bon-appetit-front-end/static/css/main.524bca0d.chunk.css.map",
+    "static/js/2.f8862e85.chunk.js.LICENSE.txt": "/bon-appetit-front-end/static/js/2.f8862e85.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4cbf6690.js",
-    "static/js/2.e296b287.chunk.js",
+    "static/js/runtime-main.ef3b0439.js",
+    "static/js/2.f8862e85.chunk.js",
     "static/css/main.524bca0d.chunk.css",
-    "static/js/main.67d9b057.chunk.js"
+    "static/js/main.e472e2b9.chunk.js"
   ]
 }
