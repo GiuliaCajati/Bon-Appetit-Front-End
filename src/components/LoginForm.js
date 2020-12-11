@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Icon, InlineIcon } from '@iconify/react';
-import chefHat from '@iconify-icons/mdi/chef-hat';
+//import chefHat from '@iconify-icons/mdi/chef-hat';
 import { Redirect } from 'react-router-dom'
 import {Route } from 'react-router-dom'
 
@@ -120,7 +120,7 @@ export default function SignInSide(props) {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar} >
-          <Icon icon={chefHat} width="90%"/>
+          {/* <Icon icon={chefHat} width="90%"/> */}
           </Avatar>
           <Typography component="h1" variant="h5">
           <h1 id="form-title" >
