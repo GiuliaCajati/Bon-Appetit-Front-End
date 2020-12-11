@@ -259,7 +259,7 @@ class App extends Component {
                 sortMeals={this.sortMeals}/>}}/>  
           
 
-        {/* <Route component={NotFound}/> */}
+        <Route component={NotFound}/>
         </Switch>
       </div>
       </Fragment>
