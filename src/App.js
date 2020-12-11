@@ -174,7 +174,9 @@ class App extends Component {
       <Fragment>
       <div className="App">
         <Switch>
+        
           <Route exact path="/" component={Header} />
+          <Route exact path="/bon-appetit-front-end" component={Header} />
 
          {/* Header */}
          <Route path='/meals/:id' component={Header}/>
@@ -244,7 +246,12 @@ class App extends Component {
                     routerProps={props}/>}/>
                     
         {/* Login Form*/}
+        
         <Route exact path='/login' 
+                    render={(props) => <LoginForm 
+                    setCurrentUser={this.setCurrentUser} 
+                    routerProps={props}/>}/>
+        <Route exact path='/bon-appetit-front-end' 
                     render={(props) => <LoginForm 
                     setCurrentUser={this.setCurrentUser} 
                     routerProps={props}/>}/>
