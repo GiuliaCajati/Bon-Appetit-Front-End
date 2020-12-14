@@ -17,7 +17,9 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-const mealURL="http://localhost:3000/meals/"
+const mealURL="https://aqueous-depths-38272.herokuapp.com/meals/"
+const usersURL="https://aqueous-depths-38272.herokuapp.com/users/"
+//const mealURL="http://localhost:3000/meals/"
 
 const styles = theme => ({
   card: {
@@ -66,8 +68,9 @@ class RecipeReviewCard extends React.Component {
     
   }
 
+  
   getUserData = () => {
-    fetch(`http://localhost:3000/users/${this.state.meals.user_id}`)
+    fetch(`${usersURL}/${this.state.meals.user_id}`)
     .then(data => data.json())
     .then(userData =>{
       this.setState({
