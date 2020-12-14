@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AddMeal(props) {
   const classes = useStyles();
+  const mealURL="https://aqueous-depths-38272.herokuapp.com/meals/"
 
   //Setting State for create new meal
   const [state , setState] = useState({
@@ -84,7 +85,7 @@ export default function AddMeal(props) {
 
   const addMeal = (newMealObject) => {
     //from New Meal Form... still need to make
-    fetch("http://localhost:3000/meals/", {
+    fetch(mealURL, {
       method: 'POST',
       headers: { "Content-Type": "application/json"},
       body: JSON.stringify(newMealObject)

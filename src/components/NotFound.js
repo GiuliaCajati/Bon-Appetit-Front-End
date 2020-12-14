@@ -12,7 +12,6 @@ class NotFound extends Component {
             <body class="four-o-four-page">
                 <div class = "four-o-four-info">
                     <h1>404</h1>
-                    TESTING
                     "Wooops! You took a wrong turn"
                     <div class = "four-o-four-button">
                    
