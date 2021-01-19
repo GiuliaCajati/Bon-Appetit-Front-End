@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bon-appetit-front-end/static/css/main.524bca0d.chunk.css",
-    "main.js": "/bon-appetit-front-end/static/js/main.a747f3fa.chunk.js",
-    "main.js.map": "/bon-appetit-front-end/static/js/main.a747f3fa.chunk.js.map",
+    "main.js": "/bon-appetit-front-end/static/js/main.d0704f91.chunk.js",
+    "main.js.map": "/bon-appetit-front-end/static/js/main.d0704f91.chunk.js.map",
     "runtime-main.js": "/bon-appetit-front-end/static/js/runtime-main.8f799f50.js",
     "runtime-main.js.map": "/bon-appetit-front-end/static/js/runtime-main.8f799f50.js.map",
     "static/js/2.6295ea44.chunk.js": "/bon-appetit-front-end/static/js/2.6295ea44.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8f799f50.js",
     "static/js/2.6295ea44.chunk.js",
     "static/css/main.524bca0d.chunk.css",
-    "static/js/main.a747f3fa.chunk.js"
+    "static/js/main.d0704f91.chunk.js"
   ]
 }
