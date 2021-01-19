@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=IKpoDlZfW1A&feature=youtu.be
   
   https://img.youtube.com/vi/<IKpoDlZfW1A>/maxresdefault.jpg
   
-https://img.youtube.com/vi/<IKpoDlZfW1A>/default.jpg
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=IKpoDlZfW1A)
 
 # Bon Appétit
 
