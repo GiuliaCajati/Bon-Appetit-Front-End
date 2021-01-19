@@ -25,7 +25,6 @@ const MealMap = withScriptjs(withGoogleMap((props) =>{
         defaultZoom={14}
         center={ { lat: 38.897570, lng: -77.032558 } }
         >
-
         {markers}
       </GoogleMap>
     );

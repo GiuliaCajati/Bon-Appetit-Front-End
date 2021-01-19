@@ -32,12 +32,9 @@ export default class MapContainer extends React.Component {
 		return (
         
             <MealMap 
-
-            
                 originsArray={this.state.originsArray}
-
-				googleMapURL={``}
-				loadingElement={<div style={{ height: `100%`}} />}
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDCHUHax6W-OQ0dHLUHg2YFujx9-2h4ABc&libraries=geometry,drawing,places`}
+				        loadingElement={<div style={{ height: `100%`}} />}
 				containerElement={<div style={{ height: `600px`, width: `600px`, display:'block'}} />}
 				mapElement={<div style={{ height: `100%` }} />}
 			/>

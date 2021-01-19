@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Icon, InlineIcon } from '@iconify/react';
-//import chefHat from '@iconify-icons/mdi/chef-hat';
+// import chefHat from '@iconify-icons/mdi/chef-hat';
 import { Redirect } from 'react-router-dom'
 import {Route } from 'react-router-dom'
 
