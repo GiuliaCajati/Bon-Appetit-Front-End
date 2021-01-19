@@ -1,6 +1,6 @@
 # Demo Video
 
-[![Watch the video](https://i.imgur.com/LgKTh04.png)](https://www.youtube.com/watch?v=IKpoDlZfW1A)
+[![Watch the video](https://i.imgur.com/xgsU0iW.png)](https://www.youtube.com/watch?v=IKpoDlZfW1A)
 
 # Bon Appétit
 
