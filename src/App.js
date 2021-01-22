@@ -240,7 +240,7 @@ class App extends Component {
               }} />
 
         {/* New User: Create Account Form*/}
-        <Route exact path='/create_account' 
+        <Route exact path='/bon-appetit-front-end/create_account' 
                     render={(props) => <NewUserForm 
                     setCurrentUser={this.setCurrentUser} 
                     routerProps={props}/>}/>
