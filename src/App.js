@@ -197,6 +197,8 @@ class App extends Component {
       <div className="App">
         <Switch>
           {/* Body */}
+          <Route exact path="/" component={Header} />
+          <Route exact path="/bon-appetit-front-end" component={Header} />
 
           {/* map */}
         <Route exact path='/map'
