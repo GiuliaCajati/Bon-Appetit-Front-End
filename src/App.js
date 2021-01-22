@@ -240,11 +240,11 @@ class App extends Component {
               }} />
 
         {/* New User: Create Account Form*/}
-        <Route path='/create_account' 
+        <Route path={process.env.PUBLIC_URL + '/create_account'}
                     render={(props) => <NewUserForm 
                     setCurrentUser={this.setCurrentUser} 
                     routerProps={props}/>}/>
-                    
+      
         {/* Login Form*/}
         
         <Route exact path='/login' 
