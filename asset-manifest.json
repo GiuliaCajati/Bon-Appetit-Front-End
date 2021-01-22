@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/bon-appetit-front-end/static/css/main.524bca0d.chunk.css",
-    "main.js": "/bon-appetit-front-end/static/js/main.985c11b4.chunk.js",
-    "main.js.map": "/bon-appetit-front-end/static/js/main.985c11b4.chunk.js.map",
+    "main.js": "/bon-appetit-front-end/static/js/main.f0e6488e.chunk.js",
+    "main.js.map": "/bon-appetit-front-end/static/js/main.f0e6488e.chunk.js.map",
     "runtime-main.js": "/bon-appetit-front-end/static/js/runtime-main.f322f43b.js",
     "runtime-main.js.map": "/bon-appetit-front-end/static/js/runtime-main.f322f43b.js.map",
-    "static/js/2.436797f2.chunk.js": "/bon-appetit-front-end/static/js/2.436797f2.chunk.js",
-    "static/js/2.436797f2.chunk.js.map": "/bon-appetit-front-end/static/js/2.436797f2.chunk.js.map",
+    "static/js/2.e368d1a4.chunk.js": "/bon-appetit-front-end/static/js/2.e368d1a4.chunk.js",
+    "static/js/2.e368d1a4.chunk.js.map": "/bon-appetit-front-end/static/js/2.e368d1a4.chunk.js.map",
     "static/js/3.130d9236.chunk.js": "/bon-appetit-front-end/static/js/3.130d9236.chunk.js",
     "static/js/3.130d9236.chunk.js.map": "/bon-appetit-front-end/static/js/3.130d9236.chunk.js.map",
     "index.html": "/bon-appetit-front-end/index.html",
     "static/css/main.524bca0d.chunk.css.map": "/bon-appetit-front-end/static/css/main.524bca0d.chunk.css.map",
-    "static/js/2.436797f2.chunk.js.LICENSE.txt": "/bon-appetit-front-end/static/js/2.436797f2.chunk.js.LICENSE.txt"
+    "static/js/2.e368d1a4.chunk.js.LICENSE.txt": "/bon-appetit-front-end/static/js/2.e368d1a4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f322f43b.js",
-    "static/js/2.436797f2.chunk.js",
+    "static/js/2.e368d1a4.chunk.js",
     "static/css/main.524bca0d.chunk.css",
-    "static/js/main.985c11b4.chunk.js"
+    "static/js/main.f0e6488e.chunk.js"
   ]
 }
