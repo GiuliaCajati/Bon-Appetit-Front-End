@@ -8,11 +8,11 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Icon, InlineIcon } from '@iconify/react';
-// import chefHat from '@iconify-icons/mdi/chef-hat';
 import { Redirect } from 'react-router-dom'
 import {Route } from 'react-router-dom'
-
+// npm install --save-dev @iconify/react @iconify-icons/mdi
+import { Icon, InlineIcon } from '@iconify/react';
+import chefHat from '@iconify-icons/mdi/chef-hat';
 
 //Material UI: Copyright text 
 function Copyright() {
@@ -31,6 +31,9 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
+  },
+  icon:{
+    width:'1px'
   },
   image: {
     backgroundImage: 'url(https://source.unsplash.com/user/brookelark)',
@@ -121,7 +124,8 @@ export default function SignInSide(props) {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar} >
-          {/* <Icon icon={chefHat} width="90%"/> */}
+          <Icon icon={chefHat} width="90%"/>
+          {/* <img src="https://i.imgur.com/Tg4y0Uw.png" /> */}
           </Avatar>
           <Typography component="h1" variant="h5">
           <h1 id="form-title" >
