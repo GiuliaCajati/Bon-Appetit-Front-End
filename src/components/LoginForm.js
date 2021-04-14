@@ -10,9 +10,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Redirect } from 'react-router-dom'
-import {Route } from 'react-router-dom'
 // npm install --save-dev @iconify/react @iconify-icons/mdi
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import chefHat from '@iconify-icons/mdi/chef-hat';
 
 //Material UI: Copyright text 
