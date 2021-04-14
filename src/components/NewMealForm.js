@@ -3,20 +3,18 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import { Icon } from '@iconify/react';
+import chefHat from '@iconify-icons/mdi/chef-hat';
 
 function Copyright() {
   return (
@@ -93,7 +91,6 @@ export default function AddMeal(props) {
     .then(res => res.json())
     .then(newMeal => {props.routerProps.history.push(`/meals/${newMeal.id}`)}
     )
-    debugger
   }
 
 
@@ -109,7 +106,6 @@ export default function AddMeal(props) {
       origin_id: state.origin_id,
       user_id: props.user
     }
-    debugger
     addMeal(newMeal)
   }
 
@@ -123,7 +119,7 @@ export default function AddMeal(props) {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <Icon icon={chefHat} width="90%"/>
         </Avatar>
         <Typography component="h1" variant="h5">
             Add Meal

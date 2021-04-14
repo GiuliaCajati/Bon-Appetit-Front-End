@@ -10,7 +10,6 @@ import PublicIcon from '@material-ui/icons/Public';
 
 
 const useStyles = makeStyles({
-  //material UI style 
   root: {
     flexGrow: 10,
   },

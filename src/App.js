@@ -1,11 +1,7 @@
 import React, { Component, Fragment } from "react";
 import './App.css';
-// import Filter from "./components/Filter.js"
-// import PropTypes from "prop-types"
-//Hooks 
 import { withRouter } from "react-router" //use history for login
-import {Route, Switch } from 'react-router-dom' //routes 
-//Pages 
+import {Route, Switch } from 'react-router-dom' //routes  
 import Header from './containers/Headers.js'
 import RecepieGrid from "./containers/RecepieGrid.js"
 import MealShowPage from "./components/MealShowPage";
@@ -143,11 +139,7 @@ class App extends Component {
           meals: [...changeSome]
         }
       }),
-      console.log(this.state.mealArray),
-      console.log(this.state.filteredMealArray)
     )
-    debugger
-
   }
 
   renderNewMealForm = (props) => {
@@ -197,8 +189,8 @@ class App extends Component {
       <div className="App">
         <Switch>
           {/* Body */}
-          <Route exact path="/" component={Header} />
-          <Route exact path="/bon-appetit-front-end" component={Header} />
+          <Route exact path="/" component={LoginForm} />
+          <Route exact path="/bon-appetit-front-end" component={LoginForm} />
 
           {/* map */}
         <Route exact path='/map'

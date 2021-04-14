@@ -8,7 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import chefHat from '@iconify-icons/mdi/chef-hat';
 
 
@@ -63,9 +63,9 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInSide(props) {
   //Material UI: Form Style 
   const classes = useStyles();
-  const usersURL="https://aqueous-depths-38272.herokuapp.com/login"
+  const usersURL="https://aqueous-depths-38272.herokuapp.com/users"
   //const usersURL="http://localhost:3000/users"
-
+  //might have an issue with users being the create route 
   //Setting State for create new user 
   const [state , setState] = useState({
     name: "",
@@ -102,6 +102,7 @@ export default function SignInSide(props) {
     })
     .then(response => response .json())
     .then(data => {
+      debugger
       props.setCurrentUser(data)
       props.routerProps.history.push('/profile')
     })

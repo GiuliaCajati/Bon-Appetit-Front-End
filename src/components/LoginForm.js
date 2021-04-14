@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
+//import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -70,7 +71,7 @@ export default function SignInSide(props) {
   //Material UI: Form Style 
   const classes = useStyles();
   
-  const usersURL="https://aqueous-depths-38272.herokuapp.com/login"
+  const loginURL="https://aqueous-depths-38272.herokuapp.com/login"
   //const usersURL="http://localhost:3000/login"
 
   //Setting State for create new user 
@@ -97,7 +98,7 @@ export default function SignInSide(props) {
       name: state.name,
       password: state.password
     }
-    fetch(usersURL, {
+    fetch(loginURL, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -112,6 +113,7 @@ export default function SignInSide(props) {
       if(data.message){
         props.routerProps.history.push('/login')
       } else{
+        debugger
         props.routerProps.history.push('/profile') 
       }
       }) 
@@ -176,11 +178,12 @@ export default function SignInSide(props) {
           
               </Grid>
               <Grid item>
-                <Link href="/create_account"  variant="body2"><b>
-                  {"Don't have an account? Sign Up"}
-                </b>
-                  
+                 <Link to="/create_account"  variant="body2"><b>
+                  {"Don't have an account? Sign Up!"}
+                </b> 
                 </Link>
+                
+          
               </Grid>
             </Grid>
            

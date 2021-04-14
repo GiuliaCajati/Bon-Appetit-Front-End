@@ -92,10 +92,6 @@ class RecipeReviewCard extends React.Component {
       this.getUserData()
     }
     
-
-    console.log(this.props)
-    console.log (this.state)
-    console.log(currentMeal)
     return (
     <div id="check-for-array">
         <div id="meal-card-div">
